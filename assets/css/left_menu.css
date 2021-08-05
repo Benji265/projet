@@ -113,3 +113,8 @@ h2 {
     color: red;
     text-align: center;
 }
+
+.titleMenu{
+    text-align: center;
+    background: url(../img/bg1.gif);
+}

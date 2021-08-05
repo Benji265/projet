@@ -7,9 +7,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" background="{dpath}img/bg1.gif">
-                <center>{devlp}</center>
-            </td>
+            <td colspan="2" class="titleMenu">Développement</td>
         </tr>
         <tr>
             <td colspan="2">
@@ -47,9 +45,8 @@
         </tr>
         <tr>
 
-            <td colspan="2" background="{dpath}img/bg1.gif">
-                <center>{navig}</center>
-            </td>
+            <td colspan="2" class="titleMenu">Navigation</td>
+
         </tr>
         <tr>
             <td colspan="2">
@@ -68,9 +65,8 @@
         </tr>
         <tr>
 
-            <td colspan="2" background="{dpath}img/bg1.gif">
-                <center>{observ}</center>
-            </td>
+            <td colspan="2" class="titleMenu">Observation</td>
+
         </tr>
         <tr>
             <td colspan="2">
@@ -117,10 +113,8 @@
             </td>
         </tr>
         <tr>
-            
-            <td colspan="2" background="{dpath}img/bg1.gif">
-                <center>{commun}</center>
-            </td>
+
+            <td colspan="2" class="titleMenu">Navigation</td>
         </tr>
         <tr>
             <td colspan="2">
@@ -161,19 +155,13 @@
         </tr>
         <tr>
             <td colspan="2">
-                <div><a href="javascript:top.location.href='logout.php'" style="color:red">{Logout}</a></div>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" background="{dpath}img/bg1.gif">
-                <center>{infog}</center>
+                <div><a href="logout.php" style="color:red">{Logout}</a></div>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <div>
-                    <center><a href="credit.php">XNova Team</a><br>&copy;
-                        Copyright 2008</center>
+                <div class="text-center">
+                    <a href="credit.php">XNova Team</a><br>&copy;Copyright 2008
                 </div>
             </td>
         </tr>
