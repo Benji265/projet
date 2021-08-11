@@ -8,7 +8,8 @@ body {
 }
 
 body.style table {
-    margin: 0px;
+    margin-top: 30px;
+    margin-left: 20px;
     width: 150px;
     border-spacing: 0px;
 }

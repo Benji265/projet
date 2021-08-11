@@ -9,36 +9,27 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="overview.php">{Overview}</a></div>
-        </td>
-    </tr>
-    <tr>
-
-        <td height="1px" colspan="2" style="background-color:#FFFFFF"></td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <div><a href="buildings.php">{Buildings}</a></div>
+            <div><a href="overview.php">Vue Générale</a></div>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="buildings.php?mode=research">{Research}</a></div>
+            <div><a href="buildings.php">Bâtiments</a></div>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="buildings.php?mode=fleet">{Shipyard}</a></div>
+            <div><a href="research.php">Recherche</a></div>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="buildings.php?mode=defense">{Defense}</a></div>
+            <div><a href="shipyard.php">Vaisseaux</a></div>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="officier.php">{Officiers}</a></div>
+            <div><a href="defense.php">Defense</a></div>
         </td>
     </tr>
     <tr>
@@ -73,11 +64,6 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="imperium.php">{Imperium}</a></div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
             <div><a href="resources.php">{Resources}</a></div>
         </td>
     </tr>
@@ -106,11 +92,6 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2">
-            <div><a href="banned.php">{blocked}</a></div>
-        </td>
-    </tr>
-    <tr>
 
         <td colspan="2" class="titleMenu">Navigation</td>
     </tr>
@@ -122,16 +103,6 @@
     <tr>
         <td colspan="2">
             <div><a href="chat.php">{Chat}</a></div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <div><a href="{forum_url}">{Board}</a></div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <div><a href="add_declare.php">{multi}</a></div>
         </td>
     </tr>
     <tr>
@@ -154,13 +125,6 @@
     <tr>
         <td colspan="2">
             <div><a href="logout.php" style="color:red">{Logout}</a></div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <div class="text-center">
-                <a href="credit.php">XNova Team</a><br>&copy;Copyright 2021
-            </div>
         </td>
     </tr>
 </table>
