@@ -12,6 +12,13 @@
 
 <body class="style">
     <div class="row">
+        <div class="offset-4 col-lg-7">
+            <?php
+            require_once 'template/ressource_top.php';
+            ?>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-4">
             <?php
             require_once 'template/left_menu.php';

@@ -73,10 +73,6 @@
         </td>
     </tr>
     <tr>
-
-        <td height="1px" colspan="2" style="background-color:#FFFFFF"></td>
-    </tr>
-    <tr>
         <td colspan="2">
             <div><a href="records.php">{Records}</a></div>
         </td>
@@ -119,8 +115,6 @@
         <td colspan="2">
             <div><a href="options.php">{Options}</a></div>
         </td>
-    </tr>
-    <tr>
     </tr>
     <tr>
         <td colspan="2">

@@ -1,6 +1,6 @@
 <table width="519">
     <tr>
-        <td class="c text-center" style="border-top: 1px #545454 solid" colspan="4">{Planet} "{planet_name}" ({user_username})</td>
+        <td class="c text-center borderTop" colspan="4">{Planet} "{planet_name}" ({user_username})</td>
     </tr>
     <tr>
         <th>{Server_time}</th>
