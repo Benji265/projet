@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <td colspan="2" style="border-top: 1px #545454 solid">
+        <td colspan="2">
             <div class="red">XNova</div>
         </td>
     </tr>

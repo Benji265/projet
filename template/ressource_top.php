@@ -1,6 +1,6 @@
-<table style="width: 508px;">
+<table style="width: 519px;">
     <tbody>
-        <tr class="text-center borderTop">
+        <tr class="text-center">
             <td><img class="imgSize" src="assets/img/metal.gif"></td>
             <td><img class="imgSize" src="assets/img/cristal.gif"></td>
             <td><img class="imgSize" src="assets/img/deuterium.gif"></td>

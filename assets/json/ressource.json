@@ -1,0 +1,136 @@
+{
+    "buildings": [
+        {
+            "name": "Mine de métal",
+            "description": "Principal fournisseur de mati&egrave;res premi&egrave;res pour la construction de structures portantes et de vaisseaux.",
+            "img" : "assets/img/ressource/1.gif"
+        },
+        {
+            "name": "Mine de cristal",
+            "description": "Fournisseur principal de ressources pour les installations &eacute;lectroniques et pour les alliages.",
+            "img" : "assets/img/ressource/2.gif"
+        },
+        {
+            "name": "Synth&eacute;tiseur de deut&eacute;rium",
+            "description": "Extrait la petite quantit&eacute; de deut&eacute;rium de l'eau d'une plan&egrave;te.",
+            "img" : "assets/img/ressource/3.gif"
+        },
+        {
+            "name": "Centrale &eacute;lectrique solaire",
+            "description": "Les centrales &eacute;lectriques solaires transforment les rayons de soleil en &eacute;nergie. Presque tous les b&acirc;timents ont besoin d'&eacute;nergie pour fonctionner.",
+            "img" : "assets/img/ressource/4.gif"
+        },
+        {
+            "name": "Usine de robots",
+            "description": "Les usines de robots produisent des robots ouvriers qui servent &agrave; la construction de l'infrastructure plan&eacute;taire. Chaque niveau augmente la vitesse de construction des diff&eacute;rents b&acirc;timents.",
+            "img" : "assets/img/ressource/5.gif"
+        },
+        {
+            "name": "Usine de nanites",
+            "description": "C'est le perfectionnement de la technologie de robots. Chaque niveau augmente la vitesse de construction des vaisseaux et des b&acirc;timents.",
+            "img" : "assets/img/ressource/6.gif"
+        },
+        {
+            "name": "Chantier spatial",
+            "description": "Le chantier spatial permet de construire les vaisseaux et les installations de d&eacute;fense.",
+            "img" : "assets/img/ressource/7.gif"
+        },
+        {
+            "name": "Hangar de m&eacute;tal",
+            "description": "Hangar pour minerai avant le traitement",
+            "img" : "assets/img/ressource/8.gif"
+        },
+        {
+            "name": "Hangar de cristal",
+            "description": "Hangar pour cristal avant le traitement.",
+            "img" : "assets/img/ressource/9.gif"
+        },
+        {
+            "name": "R&eacute;servoir de deut&eacute;rium",
+            "description": "R&eacute;servoirs g&eacute;ants pour le stockage de deut&eacute;rium.",
+            "img" : "assets/img/ressource/10.gif"
+        },
+        {
+            "name": "Laboratoire de recherche",
+            "description": "Le laboratoire de recherche est n&eacute;cessaire pour d&eacute;velopper de nouvelles technologies.",
+            "img" : "assets/img/ressource/11.gif"
+        }
+    ],
+    "research": [
+        {
+            "name": "Technologie Espionnage",
+            "description": "Cette technologie permet d'obtenir des informations sur les autres plan&egrave;tes de l'univers.",
+            "img" : "assets/img/ressource/13.gif"
+        },
+        {
+            "name": "Technologie Ordinateur",
+            "description": "Avec l'augmentation des capacit&eacute;s des ordinateurs, plus de flottes peuvent &ecirc;tre command&eacute;es. Chaque niveau de technologie ordinateur augmente d'une le nombre total de flottes commandables.",
+            "img" : "assets/img/ressource/14.gif"
+        },
+        {
+            "name": "Technologie Armes",
+            "description": "La technologie armes rend les syst&egrave;mes d'armes plus efficaces. Chaque niveau de technologie armes augmente la puissance des armes des unit&eacute;s par tranche de 10% de la valeur de base.",
+            "img" : "assets/img/ressource/15.gif"
+        },
+        {
+            "name": "Technologie Bouclier",
+            "description": "Chaque niveau de la technologie de bouclier augmente l'efficacit&eacute; des boucliers par tranche de 10%.",
+            "img" : "assets/img/ressource/12.gif"
+        },
+        {
+            "name": "Technologie Energie",
+            "description": "Maîtriser les diff&eacute;rents types d'&eacute;nergie est n&eacute;cessaire pour de nombreuses technologies.",
+            "img" : "assets/img/ressource/16.gif"
+        },
+        {
+            "name": "Technologie Hyperespace",
+            "description": "L'int&eacute;gration de la 4eme et de la 5eme dimension permet le d&eacute;veloppement d'un nouveau genre de propulsion plus puissant et efficace.",
+            "img" : "assets/img/ressource/17.gif"
+        },
+        {
+            "name": "R&eacute;acteur &agrave; combustion",
+            "description": "Le d&eacute;veloppement de ces r&eacute;acteurs rend les vaisseaux plus rapides mais chaque niveau n'augmente la vitesse que de 10%.",
+            "img" : "assets/img/ressource/18.gif"
+        },
+        {
+            "name": "R&eacute;acteur &agrave; impulsion",
+            "description": "Le r&eacute;acteur &agrave; impulsion est bas&eacute; sur le principe de r&eacute;action disant que la plus grande part de la masse du rayon est gagn&eacute;e comme sous-produit de la fusion d'atomes qui sert &agrave; produire l'&eacute;nergie n&eacute;cessaire.",
+            "img" : "assets/img/ressource/19.gif"
+        },
+        {
+            "name": "Propulsion hyperespace",
+            "description": "Par une d&eacute;formation spatiale et temporelle dans l'environnement du vaisseau, l'espace est comprim&eacute; ce qui permet de parcourir de longues distances dans un minimum de temps.",
+            "img" : "assets/img/ressource/20.gif"
+        },
+        {
+            "name": "Technologie Laser",
+            "description": "La concentration de lumi&egrave;re cr&eacute;e un rayon pouvant cr&eacute;er des d&eacute;g&acirc;ts importants  en touchant un objet.",
+            "img" : "assets/img/ressource/21.gif"
+        },
+        {
+            "name": "Technologie Ions",
+            "description": "Rayon mortel compos&eacute; d'ions acc&eacute;l&eacute;r&eacute;s. En touchant un objet, il cause des d&eacute;g&acirc;ts importants.",
+            "img" : "assets/img/ressource/22.gif"
+        },
+        {
+            "name": "Technologie Plasma",
+            "description": "Une am&eacute;lioration de la technologie d'ions qui n'acc&eacute;l&egrave;re pas des ions mais du plasma tr&egrave;s &eacute;nerg&eacute;tique. Ceci a un effet d&eacute;vastateur en touchant un objet.",
+            "img" : "assets/img/ressource/23.gif"
+        },
+        {
+            "name": "R&eacute;seau de recherche intergalactique",
+            "description": "Les chercheurs de plusieurs plan&egrave;tes utilisent ce r&eacute;seau pour communiquer.",
+            "img" : "assets/img/ressource/24.gif"
+        },
+        {
+            "name": "Technologie Exp&eacute;ditions",
+            "description": "Les vaisseaux peuvent dor&eacute;navant &ecirc;tre &eacute;quip&eacute;s de modules de recherche qui permettent l'&eacute;valuation scientifique des donn&eacute;es recueillies lors de longues exp&eacute;ditions.",
+            "img" : "assets/img/ressource/25.gif"
+        },
+        {
+            "name": "Technologie Graviton",
+            "description": "Une quantit&eacute; concentr&eacute;e de particules de graviton, r&eacute;seau artificiel de gravitation, est propuls&eacute;e, capable de d&eacute;truire des vaisseaux ou m&ecirc;me des lunes.",
+            "img" : "assets/img/ressource/26.gif"
+        }
+    ]
+}
