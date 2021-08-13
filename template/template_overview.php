@@ -29,8 +29,8 @@
         <th colspan="3">{planet_diameter} km</th>
     </tr>
     <th>{Developed_fields}</th>
-    <th colspan="3" align="center">
-        <div style="border: 1px solid rgb(153, 153, 255); width: 400px;">
+    <th colspan="3">
+        <div class="pourcentStyle">
             <div>{case_pourcentage}</div>
     </th>
     <tr>
