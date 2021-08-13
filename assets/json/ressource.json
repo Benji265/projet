@@ -132,5 +132,130 @@
             "description": "Une quantit&eacute; concentr&eacute;e de particules de graviton, r&eacute;seau artificiel de gravitation, est propuls&eacute;e, capable de d&eacute;truire des vaisseaux ou m&ecirc;me des lunes.",
             "img" : "assets/img/ressource/26.gif"
         }
+    ],
+    "shipyard": [
+        {
+            "name": "Petit transporteur",
+            "description": "Le petit transporteur est un vaisseau tr&egrave;s maniable et capable de transporter des mati&egrave;res premi&egrave;res sur d'autres plan&egrave;tes rapidement.",
+            "img" : "assets/img/ressource/27.gif"
+        },
+        {
+            "name": "Grand transporteur",
+            "description": "Le d&eacute;veloppement du transporteur augmente la capacit&eacute; de fret et rend le vaisseau plus rapide que le petit transporteur.",
+            "img" : "assets/img/ressource/28.gif"
+        },
+        {
+            "name": "Chasseur l&eacute;ger",
+            "description": "Le chasseur l&eacute;ger est un vaisseau tr&egrave;s manoeuvrable qui est stationn&eacute; sur presque toutes les plan&egrave;tes. Les co&ucirc;ts ne sont pas tr&egrave;s importants, mais la puissance du bouclier et la capacit&eacute; de fret sont tr&egrave;s limit&eacute;es.",
+            "img" : "assets/img/ressource/29.gif"
+        },
+        {
+            "name": "Chasseur lourd",
+            "description": "Cette version am&eacute;lior&eacute;e du chasseur l&eacute;ger poss&egrave;de une meilleure protection et une capacit&eacute; d'attaque plus importante.",
+            "img" : "assets/img/ressource/30.gif"
+        },
+        {
+            "name": "Croiseur",
+            "description": "Les croiseurs ont une protection presque trois fois plus importante que celle des chasseurs lourds et leur puissance de tir est plus de deux fois plus grande. De plus, ils sont tr&egrave;s rapides.",
+            "img" : "assets/img/ressource/31.gif"
+        },
+        {
+            "name": "Vaisseau de bataille",
+            "description": "Les vaisseaux de bataille jouent un r&ocirc;le central dans les flottes. Avec leur artillerie lourde, leur vitesse consid&eacute;rable et la grande capacit&eacute; de fret, ils sont des adversaires respectables.",
+            "img" : "assets/img/ressource/32.gif"
+        },
+        {
+            "name": "Vaisseau de colonisation",
+            "description": "Les nouvelles plan&egrave;tes peuvent &ecirc;tre colonis&eacute;es avec ce vaisseau.",
+            "img" : "assets/img/ressource/33.gif"
+        },
+        {
+            "name": "Recycleur",
+            "description": "Le recycleur collecte les ressources dans les Champs de d&eacute;bris.",
+            "img" : "assets/img/ressource/34.gif"
+        },
+        {
+            "name": "Sonde espionnage",
+            "description": "Les sondes d'espionnage sont des petits drones manoeuvrables qui espionnent les plan&egrave;tes m&ecirc;me &agrave; grande distance.",
+            "img" : "assets/img/ressource/35.gif"
+        },
+        {
+            "name": "Bombardier",
+            "description": "Le bombardier a &eacute;t&eacute; d&eacute;velopp&eacute; pour pouvoir d&eacute;truire les installations de d&eacute;fense des plan&egrave;tes.",
+            "img" : "assets/img/ressource/36.gif"
+        },
+        {
+            "name": "Satellite solaire",
+            "description": "Les satellites solaires sont des plates-formes couvertes de cellules solaires, qui se trouvent dans une orbite tr&egrave;s &eacute;lev&eacute;e et stationnaire. Ils collectent la lumi&egrave;re du soleil et la transmettent par laser &agrave; la station de base.",
+            "img" : "assets/img/ressource/37.gif"
+        },
+        {
+            "name": "Destructeur",
+            "description": "Le destructeur est le roi des vaisseaux de guerre.",
+            "img" : "assets/img/ressource/38.gif"
+        },
+        {
+            "name": "Etoile de la mort",
+            "description": "La puissance de destruction de l'&eacute;toile de la mort est imbattable.",
+            "img" : "assets/img/ressource/39.gif"
+        },
+        {
+            "name": "Traqueur",
+            "description": "Le traqueur est sp&eacute;cialis&eacute; dans l'interception de flottes ennemies.",
+            "img" : "assets/img/ressource/40.gif"
+        }
+        
+    ],
+    "defense": [
+        {
+            "name": "Lanceur de missiles",
+            "description": "Le lanceur de missiles est une fa&ccedil;on simple et bon march&eacute; de se d&eacute;fendre.",
+            "img" : "assets/img/ressource/41.gif"
+        },
+        {
+            "name": "Artillerie laser l&eacute;g&egrave;re",
+            "description": "Le bombardement concentr&eacute; de photons peut causer des d&eacute;g&acirc;ts nettement plus important que les armes balistiques habituelles.",
+            "img" : "assets/img/ressource/42.gif"
+        },
+        {
+            "name": "Artillerie laser lourde",
+            "description": "L'artillerie lourde au laser est l'&eacute;volution cons&eacute;quente de l'artillerie l&eacute;g&egrave;re au laser.",
+            "img" : "assets/img/ressource/43.gif"
+        },
+        {
+            "name": "Canon de Gauss",
+            "description": "Le canon de Gauss (canon &eacute;lectromagn&eacute;tique) acc&eacute;l&egrave;re un projectile pesant des tonnes en consommant une gigantesque quantit&eacute; d'&eacute;nergie.",
+            "img" : "assets/img/ressource/44.gif"
+        },
+        {
+            "name": "Artillerie &agrave; ions",
+            "description": "L'artillerie d'ions lance des vagues d'ions sur l'objet, ce qui d&eacute;stabilise les boucliers et endommage l'&eacute;lectronique.",
+            "img" : "assets/img/ressource/45.gif"
+        },
+        {
+            "name": "Lanceur de plasma",
+            "description": "Les lanceurs de plasma disposent de la puissance d'une &eacute;ruption solaire et peuvent donc &ecirc;tre plus destructeurs que les destructeurs eux-m&ecirc;mes.",
+            "img" : "assets/img/ressource/46.gif"
+        },
+        {
+            "name": "Petit bouclier",
+            "description": "Le petit bouclier couvre toute une plan&egrave;te avec un champ infranchissable qui peut absorber une quantit&eacute; &eacute;norme d'&eacute;nergie.",
+            "img" : "assets/img/ressource/47.gif"
+        },
+        {
+            "name": "Grand bouclier",
+            "description": "L'am&eacute;lioration du petit bouclier peut se servir de nettement plus d'&eacute;nergie pour se d&eacute;fendre.",
+            "img" : "assets/img/ressource/48.gif"
+        },
+        {
+            "name": "Missile Interception",
+            "description": "Le missile interception d&eacute;truit les missiles adverses.",
+            "img" : "assets/img/ressource/49.gif"
+        },
+        {
+            "name": "Missile Interplan&eacute;taire",
+            "description": "Les missiles interplan&eacute;taires d&eacute;truisent la d&eacute;fense adverse.",
+            "img" : "assets/img/ressource/50.gif"
+        }
     ]
 }

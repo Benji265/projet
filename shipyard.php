@@ -25,6 +25,11 @@
             require_once 'template/left_menu.php';
             ?>
         </div>
+        <div class="col-lg-8">
+            <?php
+            require_once 'template/template_shipyard.php';
+            ?>
+        </div>
     </div>
 
 
