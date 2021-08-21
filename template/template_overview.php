@@ -1,4 +1,4 @@
-<table style="width: 519px;">
+<table class="widthTable">
     <tr>
         <td class="c text-center" colspan="4">{Planet} "{planet_name}" ({user_username})</td>
     </tr>

@@ -3,7 +3,7 @@ $json_file = file_get_contents('./assets/json/ressource.json');
 $json_data = json_decode($json_file, true);
 ?>
 
-<table style="width: 519px;">
+<table class="widthTable">
     <tbody>
         <?php
         foreach($json_data['buildings'] as $value){

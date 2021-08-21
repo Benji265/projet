@@ -1,4 +1,4 @@
-<table style="width: 519px;">
+<table class="widthTable">
     <tbody>
         <tr class="text-center">
             <td><img class="imgSize" src="assets/img/metal.gif"></td>

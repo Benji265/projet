@@ -111,3 +111,7 @@ h2 {
     text-align: center;
     background: url(../img/bg1.gif);
 }
+
+.widthTable {
+    width: 519px !important;
+}
