@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+/** Global  */
 
-.navLink {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 body {
     background-image: url(../img/accueil.jpeg);
@@ -12,26 +9,164 @@ body {
     width: 100vw;
 }
 
-/* .sizeBox {
-    height: 80vh;
-    width: 70vw;
-    background: rgba(255, 255, 255, 0.20);
+/****************************/
+
+/** NavBar  */
+
+.navLink {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/****************************/
+
+
+/** Index */
+
+.container-index {
+    min-height: 92.2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.wrap-index {
+    width: 800px;
+    background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
+    backdrop-filter: blur(20px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    font-family: 'Play', sans-serif;
-    overflow: scroll;
+    overflow: hidden;
+    padding: 20px;
 }
 
-.sizeBoxCol{
-    padding: 1em;
-    height: 16vw;
-    background-color: rgba(0, 0, 0, 0.80);
+.index-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: #333333;
+    line-height: 1.2;
+    width: 100%;
 }
 
-.sizeNameGame{
-    height: 7vh;
-} */
+.subtitleIndex {
+    background: url(../img/bg1.gif);
+    border-radius: 20px;
+}
 
+
+/****************************/
+
+
+/** Connection  */
+
+.container-connection {
+    min-height: 92.2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.wrap-connection {
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px
+}
+
+.connection-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.2;
+    width: 100%;
+}
+
+.input {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 68px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.text1 {
+    line-height: 0.2;
+}
+
+body>div>div>form>div.row.justify-content-center.text-center>div>p>a {
+    text-decoration: none;
+    color: #999999;
+    font-size: 13px;
+}
+
+/****************************/
+
+
+/** Registration  */
+
+.container-registration {
+    min-height: 92.2vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.wrap-registration {
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px
+}
+
+.registration-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #333333;
+    line-height: 1.2;
+    width: 100%;
+}
+
+.input-registration {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 68px;
+}
+
+.input-registration:focus {
+    outline: none;
+}
+
+.errorMsg {
+    font-style: italic;
+    color: red;
+    font-size: 12px;
+}
+
+
+/****************************/
