@@ -1,23 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
 
-div.row{
-    --bs-gutter-x: 0;
-}
-
 .navLink {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
-.sizeBody {
+body {
     background-image: url(../img/accueil.jpeg);
     background-size: cover;
-    height: 92vh;
     width: 100vw;
 }
 
-.sizeBox {
+/* .sizeBox {
     height: 80vh;
     width: 70vw;
     background: rgba(255, 255, 255, 0.20);
@@ -38,21 +33,5 @@ div.row{
 
 .sizeNameGame{
     height: 7vh;
-}
+} */
 
-@media screen and (max-width: 768px) {
-
-    .sizeBody {
-        height: 91.5vh;
-    }
-
-    .sizeBox {
-        height: 91.5vh;
-        width: 100vw;
-    }
-
-    .sizeBoxCol{
-        padding: 1em;
-        height: 82vw;
-    }
-}

@@ -3,206 +3,206 @@
         {
             "name": "Mine de métal",
             "description": "Principal fournisseur de mati&egrave;res premi&egrave;res pour la construction de structures portantes et de vaisseaux.",
-            "img" : "assets/img/ressource/1.gif"
+            "img" : "../assets/img/ressource/1.gif"
         },
         {
             "name": "Mine de cristal",
             "description": "Fournisseur principal de ressources pour les installations &eacute;lectroniques et pour les alliages.",
-            "img" : "assets/img/ressource/2.gif"
+            "img" : "../assets/img/ressource/2.gif"
         },
         {
             "name": "Synth&eacute;tiseur de deut&eacute;rium",
             "description": "Extrait la petite quantit&eacute; de deut&eacute;rium de l'eau d'une plan&egrave;te.",
-            "img" : "assets/img/ressource/3.gif"
+            "img" : "../assets/img/ressource/3.gif"
         },
         {
             "name": "Centrale &eacute;lectrique solaire",
             "description": "Les centrales &eacute;lectriques solaires transforment les rayons de soleil en &eacute;nergie. Presque tous les b&acirc;timents ont besoin d'&eacute;nergie pour fonctionner.",
-            "img" : "assets/img/ressource/4.gif"
+            "img" : "../assets/img/ressource/4.gif"
         },
         {
             "name": "Usine de robots",
             "description": "Les usines de robots produisent des robots ouvriers qui servent &agrave; la construction de l'infrastructure plan&eacute;taire. Chaque niveau augmente la vitesse de construction des diff&eacute;rents b&acirc;timents.",
-            "img" : "assets/img/ressource/5.gif"
+            "img" : "../assets/img/ressource/5.gif"
         },
         {
             "name": "Usine de nanites",
             "description": "C'est le perfectionnement de la technologie de robots. Chaque niveau augmente la vitesse de construction des vaisseaux et des b&acirc;timents.",
-            "img" : "assets/img/ressource/6.gif"
+            "img" : "../assets/img/ressource/6.gif"
         },
         {
             "name": "Chantier spatial",
             "description": "Le chantier spatial permet de construire les vaisseaux et les installations de d&eacute;fense.",
-            "img" : "assets/img/ressource/7.gif"
+            "img" : "../assets/img/ressource/7.gif"
         },
         {
             "name": "Hangar de m&eacute;tal",
             "description": "Hangar pour minerai avant le traitement",
-            "img" : "assets/img/ressource/8.gif"
+            "img" : "../assets/img/ressource/8.gif"
         },
         {
             "name": "Hangar de cristal",
             "description": "Hangar pour cristal avant le traitement.",
-            "img" : "assets/img/ressource/9.gif"
+            "img" : "../assets/img/ressource/9.gif"
         },
         {
             "name": "R&eacute;servoir de deut&eacute;rium",
             "description": "R&eacute;servoirs g&eacute;ants pour le stockage de deut&eacute;rium.",
-            "img" : "assets/img/ressource/10.gif"
+            "img" : "../assets/img/ressource/10.gif"
         },
         {
             "name": "Laboratoire de recherche",
             "description": "Le laboratoire de recherche est n&eacute;cessaire pour d&eacute;velopper de nouvelles technologies.",
-            "img" : "assets/img/ressource/11.gif"
+            "img" : "../assets/img/ressource/11.gif"
         }
     ],
     "research": [
         {
             "name": "Technologie Espionnage",
             "description": "Cette technologie permet d'obtenir des informations sur les autres plan&egrave;tes de l'univers.",
-            "img" : "assets/img/ressource/13.gif"
+            "img" : "../assets/img/ressource/13.gif"
         },
         {
             "name": "Technologie Ordinateur",
             "description": "Avec l'augmentation des capacit&eacute;s des ordinateurs, plus de flottes peuvent &ecirc;tre command&eacute;es. Chaque niveau de technologie ordinateur augmente d'une le nombre total de flottes commandables.",
-            "img" : "assets/img/ressource/14.gif"
+            "img" : "../assets/img/ressource/14.gif"
         },
         {
             "name": "Technologie Armes",
             "description": "La technologie armes rend les syst&egrave;mes d'armes plus efficaces. Chaque niveau de technologie armes augmente la puissance des armes des unit&eacute;s par tranche de 10% de la valeur de base.",
-            "img" : "assets/img/ressource/15.gif"
+            "img" : "../assets/img/ressource/15.gif"
         },
         {
             "name": "Technologie Bouclier",
             "description": "Chaque niveau de la technologie de bouclier augmente l'efficacit&eacute; des boucliers par tranche de 10%.",
-            "img" : "assets/img/ressource/12.gif"
+            "img" : "../assets/img/ressource/12.gif"
         },
         {
             "name": "Technologie Energie",
             "description": "Maîtriser les diff&eacute;rents types d'&eacute;nergie est n&eacute;cessaire pour de nombreuses technologies.",
-            "img" : "assets/img/ressource/16.gif"
+            "img" : "../assets/img/ressource/16.gif"
         },
         {
             "name": "Technologie Hyperespace",
             "description": "L'int&eacute;gration de la 4eme et de la 5eme dimension permet le d&eacute;veloppement d'un nouveau genre de propulsion plus puissant et efficace.",
-            "img" : "assets/img/ressource/17.gif"
+            "img" : "../assets/img/ressource/17.gif"
         },
         {
             "name": "R&eacute;acteur &agrave; combustion",
             "description": "Le d&eacute;veloppement de ces r&eacute;acteurs rend les vaisseaux plus rapides mais chaque niveau n'augmente la vitesse que de 10%.",
-            "img" : "assets/img/ressource/18.gif"
+            "img" : "../assets/img/ressource/18.gif"
         },
         {
             "name": "R&eacute;acteur &agrave; impulsion",
             "description": "Le r&eacute;acteur &agrave; impulsion est bas&eacute; sur le principe de r&eacute;action disant que la plus grande part de la masse du rayon est gagn&eacute;e comme sous-produit de la fusion d'atomes qui sert &agrave; produire l'&eacute;nergie n&eacute;cessaire.",
-            "img" : "assets/img/ressource/19.gif"
+            "img" : "../assets/img/ressource/19.gif"
         },
         {
             "name": "Propulsion hyperespace",
             "description": "Par une d&eacute;formation spatiale et temporelle dans l'environnement du vaisseau, l'espace est comprim&eacute; ce qui permet de parcourir de longues distances dans un minimum de temps.",
-            "img" : "assets/img/ressource/20.gif"
+            "img" : "../assets/img/ressource/20.gif"
         },
         {
             "name": "Technologie Laser",
             "description": "La concentration de lumi&egrave;re cr&eacute;e un rayon pouvant cr&eacute;er des d&eacute;g&acirc;ts importants  en touchant un objet.",
-            "img" : "assets/img/ressource/21.gif"
+            "img" : "../assets/img/ressource/21.gif"
         },
         {
             "name": "Technologie Ions",
             "description": "Rayon mortel compos&eacute; d'ions acc&eacute;l&eacute;r&eacute;s. En touchant un objet, il cause des d&eacute;g&acirc;ts importants.",
-            "img" : "assets/img/ressource/22.gif"
+            "img" : "../assets/img/ressource/22.gif"
         },
         {
             "name": "Technologie Plasma",
             "description": "Une am&eacute;lioration de la technologie d'ions qui n'acc&eacute;l&egrave;re pas des ions mais du plasma tr&egrave;s &eacute;nerg&eacute;tique. Ceci a un effet d&eacute;vastateur en touchant un objet.",
-            "img" : "assets/img/ressource/23.gif"
+            "img" : "../assets/img/ressource/23.gif"
         },
         {
             "name": "R&eacute;seau de recherche intergalactique",
             "description": "Les chercheurs de plusieurs plan&egrave;tes utilisent ce r&eacute;seau pour communiquer.",
-            "img" : "assets/img/ressource/24.gif"
+            "img" : "../assets/img/ressource/24.gif"
         },
         {
             "name": "Technologie Exp&eacute;ditions",
             "description": "Les vaisseaux peuvent dor&eacute;navant &ecirc;tre &eacute;quip&eacute;s de modules de recherche qui permettent l'&eacute;valuation scientifique des donn&eacute;es recueillies lors de longues exp&eacute;ditions.",
-            "img" : "assets/img/ressource/25.gif"
+            "img" : "../assets/img/ressource/25.gif"
         },
         {
             "name": "Technologie Graviton",
             "description": "Une quantit&eacute; concentr&eacute;e de particules de graviton, r&eacute;seau artificiel de gravitation, est propuls&eacute;e, capable de d&eacute;truire des vaisseaux ou m&ecirc;me des lunes.",
-            "img" : "assets/img/ressource/26.gif"
+            "img" : "../assets/img/ressource/26.gif"
         }
     ],
     "shipyard": [
         {
             "name": "Petit transporteur",
             "description": "Le petit transporteur est un vaisseau tr&egrave;s maniable et capable de transporter des mati&egrave;res premi&egrave;res sur d'autres plan&egrave;tes rapidement.",
-            "img" : "assets/img/ressource/27.gif"
+            "img" : "../assets/img/ressource/27.gif"
         },
         {
             "name": "Grand transporteur",
             "description": "Le d&eacute;veloppement du transporteur augmente la capacit&eacute; de fret et rend le vaisseau plus rapide que le petit transporteur.",
-            "img" : "assets/img/ressource/28.gif"
+            "img" : "../assets/img/ressource/28.gif"
         },
         {
             "name": "Chasseur l&eacute;ger",
             "description": "Le chasseur l&eacute;ger est un vaisseau tr&egrave;s manoeuvrable qui est stationn&eacute; sur presque toutes les plan&egrave;tes. Les co&ucirc;ts ne sont pas tr&egrave;s importants, mais la puissance du bouclier et la capacit&eacute; de fret sont tr&egrave;s limit&eacute;es.",
-            "img" : "assets/img/ressource/29.gif"
+            "img" : "../assets/img/ressource/29.gif"
         },
         {
             "name": "Chasseur lourd",
             "description": "Cette version am&eacute;lior&eacute;e du chasseur l&eacute;ger poss&egrave;de une meilleure protection et une capacit&eacute; d'attaque plus importante.",
-            "img" : "assets/img/ressource/30.gif"
+            "img" : "../assets/img/ressource/30.gif"
         },
         {
             "name": "Croiseur",
             "description": "Les croiseurs ont une protection presque trois fois plus importante que celle des chasseurs lourds et leur puissance de tir est plus de deux fois plus grande. De plus, ils sont tr&egrave;s rapides.",
-            "img" : "assets/img/ressource/31.gif"
+            "img" : "../assets/img/ressource/31.gif"
         },
         {
             "name": "Vaisseau de bataille",
             "description": "Les vaisseaux de bataille jouent un r&ocirc;le central dans les flottes. Avec leur artillerie lourde, leur vitesse consid&eacute;rable et la grande capacit&eacute; de fret, ils sont des adversaires respectables.",
-            "img" : "assets/img/ressource/32.gif"
+            "img" : "../assets/img/ressource/32.gif"
         },
         {
             "name": "Vaisseau de colonisation",
             "description": "Les nouvelles plan&egrave;tes peuvent &ecirc;tre colonis&eacute;es avec ce vaisseau.",
-            "img" : "assets/img/ressource/33.gif"
+            "img" : "../assets/img/ressource/33.gif"
         },
         {
             "name": "Recycleur",
             "description": "Le recycleur collecte les ressources dans les Champs de d&eacute;bris.",
-            "img" : "assets/img/ressource/34.gif"
+            "img" : "../assets/img/ressource/34.gif"
         },
         {
             "name": "Sonde espionnage",
             "description": "Les sondes d'espionnage sont des petits drones manoeuvrables qui espionnent les plan&egrave;tes m&ecirc;me &agrave; grande distance.",
-            "img" : "assets/img/ressource/35.gif"
+            "img" : "../assets/img/ressource/35.gif"
         },
         {
             "name": "Bombardier",
             "description": "Le bombardier a &eacute;t&eacute; d&eacute;velopp&eacute; pour pouvoir d&eacute;truire les installations de d&eacute;fense des plan&egrave;tes.",
-            "img" : "assets/img/ressource/36.gif"
+            "img" : "../assets/img/ressource/36.gif"
         },
         {
             "name": "Satellite solaire",
             "description": "Les satellites solaires sont des plates-formes couvertes de cellules solaires, qui se trouvent dans une orbite tr&egrave;s &eacute;lev&eacute;e et stationnaire. Ils collectent la lumi&egrave;re du soleil et la transmettent par laser &agrave; la station de base.",
-            "img" : "assets/img/ressource/37.gif"
+            "img" : "../assets/img/ressource/37.gif"
         },
         {
             "name": "Destructeur",
             "description": "Le destructeur est le roi des vaisseaux de guerre.",
-            "img" : "assets/img/ressource/38.gif"
+            "img" : "../assets/img/ressource/38.gif"
         },
         {
             "name": "Etoile de la mort",
             "description": "La puissance de destruction de l'&eacute;toile de la mort est imbattable.",
-            "img" : "assets/img/ressource/39.gif"
+            "img" : "../assets/img/ressource/39.gif"
         },
         {
             "name": "Traqueur",
             "description": "Le traqueur est sp&eacute;cialis&eacute; dans l'interception de flottes ennemies.",
-            "img" : "assets/img/ressource/40.gif"
+            "img" : "../assets/img/ressource/40.gif"
         }
         
     ],
@@ -210,52 +210,52 @@
         {
             "name": "Lanceur de missiles",
             "description": "Le lanceur de missiles est une fa&ccedil;on simple et bon march&eacute; de se d&eacute;fendre.",
-            "img" : "assets/img/ressource/41.gif"
+            "img" : "../assets/img/ressource/41.gif"
         },
         {
             "name": "Artillerie laser l&eacute;g&egrave;re",
             "description": "Le bombardement concentr&eacute; de photons peut causer des d&eacute;g&acirc;ts nettement plus important que les armes balistiques habituelles.",
-            "img" : "assets/img/ressource/42.gif"
+            "img" : "../assets/img/ressource/42.gif"
         },
         {
             "name": "Artillerie laser lourde",
             "description": "L'artillerie lourde au laser est l'&eacute;volution cons&eacute;quente de l'artillerie l&eacute;g&egrave;re au laser.",
-            "img" : "assets/img/ressource/43.gif"
+            "img" : "../assets/img/ressource/43.gif"
         },
         {
             "name": "Canon de Gauss",
             "description": "Le canon de Gauss (canon &eacute;lectromagn&eacute;tique) acc&eacute;l&egrave;re un projectile pesant des tonnes en consommant une gigantesque quantit&eacute; d'&eacute;nergie.",
-            "img" : "assets/img/ressource/44.gif"
+            "img" : "../assets/img/ressource/44.gif"
         },
         {
             "name": "Artillerie &agrave; ions",
             "description": "L'artillerie d'ions lance des vagues d'ions sur l'objet, ce qui d&eacute;stabilise les boucliers et endommage l'&eacute;lectronique.",
-            "img" : "assets/img/ressource/45.gif"
+            "img" : "../assets/img/ressource/45.gif"
         },
         {
             "name": "Lanceur de plasma",
             "description": "Les lanceurs de plasma disposent de la puissance d'une &eacute;ruption solaire et peuvent donc &ecirc;tre plus destructeurs que les destructeurs eux-m&ecirc;mes.",
-            "img" : "assets/img/ressource/46.gif"
+            "img" : "../assets/img/ressource/46.gif"
         },
         {
             "name": "Petit bouclier",
             "description": "Le petit bouclier couvre toute une plan&egrave;te avec un champ infranchissable qui peut absorber une quantit&eacute; &eacute;norme d'&eacute;nergie.",
-            "img" : "assets/img/ressource/47.gif"
+            "img" : "../assets/img/ressource/47.gif"
         },
         {
             "name": "Grand bouclier",
             "description": "L'am&eacute;lioration du petit bouclier peut se servir de nettement plus d'&eacute;nergie pour se d&eacute;fendre.",
-            "img" : "assets/img/ressource/48.gif"
+            "img" : "../assets/img/ressource/48.gif"
         },
         {
             "name": "Missile Interception",
             "description": "Le missile interception d&eacute;truit les missiles adverses.",
-            "img" : "assets/img/ressource/49.gif"
+            "img" : "../assets/img/ressource/49.gif"
         },
         {
             "name": "Missile Interplan&eacute;taire",
             "description": "Les missiles interplan&eacute;taires d&eacute;truisent la d&eacute;fense adverse.",
-            "img" : "assets/img/ressource/50.gif"
+            "img" : "../assets/img/ressource/50.gif"
         }
     ]
 }

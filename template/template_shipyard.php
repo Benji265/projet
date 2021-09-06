@@ -1,5 +1,5 @@
 <?php
-$json_file = file_get_contents('./assets/json/ressource.json');
+$json_file = file_get_contents('../assets/json/ressource.json');
 $json_data = json_decode($json_file, true);
 ?>
 

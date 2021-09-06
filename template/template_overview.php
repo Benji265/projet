@@ -17,7 +17,7 @@
     </tr>
     <tr>
         <th>{moon_img}<br>{moon}</th>
-        <th colspan="2"><img src="assets/img/planeten/eisplanet01.jpg" height="200" width="200"></th>
+        <th colspan="2"><img src="../assets/img/planeten/eisplanet01.jpg" height="200" width="200"></th>
         <th class="s">
             <table class="s">
                 <tr>{anothers_planets}</tr>

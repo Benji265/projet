@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styleMobile.css">
     <title>Accueil</title>
 </head>
 
@@ -34,10 +35,11 @@
             </div>
         </div>
     </nav>
-    <div class="row sizeBody justify-content-center align-items-center">
+
+    <!-- <div class="row sizeBody justify-content-center align-items-center">
         <div class="row sizeBox">
             <div class="row justify-content-center" id="accueilNav">
-                <h1 class="text-center sizeNameGame">Nom du Jeux</h1>
+                <h1 class="text-center sizeNameGame">Xnova</h1>
                 <h2 class="text-center">La porte vers de nouveaux mondes</h2>
                 <div class="col-12 col-xl-8 sizeBoxCol text-white rounded-3">
                     <ul>
@@ -65,13 +67,23 @@
                 </div>
             </div>
             <div class="row justify-content-center d-none" id="screenNav">
-                <h1 class="text-center sizeNameGame">Test</h1>
+                <h1 class="text-center sizeNameGame">ScreenShots</h1>
             </div>
             <div class="row justify-content-center d-none" id="inscNav">
-                <h1 class="text-center sizeNameGame">Coucou</h1>
+                <h1 class="text-center sizeNameGame">Inscription</h1>
+                <form action="index.php" method="POST">
+                    <div class="col-3">
+                        <label for="pseudo" class="form-label">Pseudo :</label>
+                        <input type="text" class="form-control" name="pseudo">
+                    </div>
+                    <div class="col-auto">
+                        <label for="password" class="form-label">Mot de passe :</label>
+                        <input type="text" class="form-control" name="pseudo">
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
