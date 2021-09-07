@@ -40,25 +40,31 @@ require_once '../controllers/registrationControllers.php';
     <div class="container-fluid container-registration">
         <div class="wrap-registration">
             <h1 class="text-center registration-title">Inscription</h1>
-            <form action="registration.php" method="POST">
-                <div class="row d-flex flex-column">
+            <form action="registration.php" method="POST" novalidate>
+                <div class="row d-flex flex-column align-items-center">
                     <div class="col-auto mb-3">
                         <label for="pseudo" class="form-label">Pseudo :</label>
-                        <span class="errorMsg"></span>
-                        <input type="text" class="input-registration" name="pseudo" id="pseudo">
+                        <span class="errorMsg"><?= $errorMsg['pseudo'] != 1 ? $errorMsg['pseudo'] : '' ?></span>
+                        <input type="text" class="input-registration" name="pseudo" id="pseudo" value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>">
                     </div>
                     <div class="col-auto mb-3">
                         <label for="email" class="form-label">Email :</label>
-                        <span class="errorMsg"></span>
-                        <input type="text" class="input-registration" name="email" id="email">
+                        <span class="errorMsg"><?= $errorMsg['email'] != 1 ? $errorMsg['email'] : '' ?></span>
+                        <input type="text" class="input-registration" name="email" id="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
                     </div>
                     <div class="col-auto mb-3">
                         <label for="password" class="form-label">Mot de passe :</label>
-                        <input type="text" class="input-registration" name="password" id="password">
+                        <span class="errorMsg"><?= $errorMsg['password'] != 1 ? $errorMsg['password'] : '' ?></span>
+                        <input type="password" class="input-registration" name="password" id="password">
                     </div>
-                    <div class="col-auto mb-4">
-                        <label for="confirmPassword" class="form-label">Confimation du mot de passe :</label>
-                        <input type="text" class="input-registration" name="confirmPassword" id="confirmPassword">
+                    <div class="col-auto mb-3">
+                        <label for="confirmPassword" class="form-label">Confirmez mot de passe :</label>
+                        <span class="errorMsg"><?= $errorMsg['confirmPassword'] != 1 ? $errorMsg['confirmPassword'] : '' ?></span>
+                        <input type="password" class="input-registration" name="confirmPassword" id="confirmPassword">
+                    </div>
+                    <div class="col-auto mb-4 text-center">
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                        <span class="errorMsg"><?= $errorMsg['captcha'] ?></span>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -69,7 +75,7 @@ require_once '../controllers/registrationControllers.php';
             </form>
         </div>
     </div>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 

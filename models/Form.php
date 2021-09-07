@@ -2,29 +2,40 @@
 
 class Form
 {
-    public function checkPseudo(array $arr, string $nameChamp, string $regex): string
+    public function checkPseudo(array $arr, string $name, string $regex): string
     {
-        if (empty($arr[$nameChamp])) {
-            return 'Champ Obligatoire';
-        } elseif (!preg_match($regex, $arr[$nameChamp])) {
-            return 'Format Invalide';
+        if (empty($arr[$name])) {
+            $errorMsg = 'Champ Obligatoire';
+            return $errorMsg;
+        } elseif (!preg_match($regex, $arr[$name])) {
+            $errorMsg = 'Format Invalide';
+            return $errorMsg;
         }
+
+        return true;
     }
 
-    public function checkEmail(array $arr, string $nameChamp): string
+    public function checkEmail(array $arr, string $name): string
     {
-        if (empty($arr[$nameChamp])) {
-            return 'Champ Obligatoire';
-        } elseif (!filter_var($arr[$nameChamp], FILTER_VALIDATE_EMAIL)) {
-            return 'Format Invalide';
+        if (empty($arr[$name])) {
+            $errorMsg = 'Champ Obligatoire';
+            return $errorMsg;
+        } elseif (!filter_var($arr[$name], FILTER_VALIDATE_EMAIL)) {
+            $errorMsg = 'Format Invalide';
+            return $errorMsg;
         }
+
+        return true;
     }
 
     public function checkPassword(array $arr, string $nameChamp): string
     {
         if (empty($arr[$nameChamp])) {
-            return 'Champ Obligatoire';
+            $errorMsg = 'Champ Obligatoire';
+            return $errorMsg;
         }
+
+        return true;
     }
 
     public function checkCaptcha(string $secret, string $response): array
