@@ -3,6 +3,7 @@
 require_once '../models/Database.php';
 require_once '../models/Users.php';
 require_once '../models/Security.php';
+require_once '../models/Planets.php';
 require_once '../models/Form.php';
 
 $regexPseudo = "/^[A-Za-z\é\è\ê\-]+$/";
@@ -53,15 +54,58 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $pseudo = $securityObj->getSafePost($_POST['pseudo']);
             $email = $securityObj->getSafePost($_POST['email']);
             $password = $securityObj->getSafePost($_POST['password']);
-
             //On hash le password pour l'envoyer dans la BDD
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-            //On instancie notre objet users pour pouvoir l'ajouter a la BDD
+            //On instancie notre objet users
             $userObj = new Users();
-            $userObj->createUser($pseudo, $email, $passwordHash);
-            //Notre user est créer on affiche une modal
-            $createUser = true;
+            $arrayUsers = $userObj->getAllUsers();
+
+            //On parcours notre tableaux pour verifier que le pseudo et l'email choisi sont différent
+            foreach ($arrayUsers as $value) {
+                if ($pseudo != $value['pseudo']) {
+                    $errorMsg['pseudo'] = true;
+                } else {
+                    $errorMsg['pseudo'] = 'Pseudo déjà utilisé';
+                    break;
+                }
+            }
+
+            foreach ($arrayUsers as $value) {
+                if ($email != $value['email']) {
+                    $errorMsg['email'] = true;
+                } else {
+                    $errorMsg['email'] = 'Email déjà utilisé';
+                    break;
+                }
+            }
+
+            if ($errorMsg['pseudo'] == 1 && $errorMsg['email'] == 1) {
+                //On créer notre user
+                $newUser = $userObj->createUser($pseudo, $email, $passwordHash);
+                //On créer une planete pour notre user
+                $planetsObj = new Planets();
+                $arrayCreatePlanets = [
+                    'Jupiter',
+                    $planetsObj->randomImgPlanet(rand(0, 45)),
+                    rand(1500, 90000),
+                    300,
+                    rand(10, 150),
+                    10000,
+                    0,
+                    500000,
+                    10000,
+                    0,
+                    500000,
+                    5000,
+                    0,
+                    500000,
+                    $newUser
+                ];
+                $planetsObj->createPlanetForOneUser($arrayCreatePlanets);
+                //Notre user est créer on affiche une modal
+                $createUser = true;
+            }
         }
     }
 }

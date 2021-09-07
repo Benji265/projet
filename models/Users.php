@@ -2,7 +2,15 @@
 
 class Users extends Database
 {
-    public function createUser($pseudo, $email, $password)
+    /**
+     * Methode qui permet de créer un user et recupérer son id
+     *
+     * @param string $pseudo
+     * @param string $email
+     * @param string $password
+     * @return int
+     */
+    public function createUser(string $pseudo, string $email, string $password): int
     {
         $bdd = $this->connectDatabase();
 
@@ -14,5 +22,21 @@ class Users extends Database
         $req->bindValue(':password', $password, PDO::PARAM_STR);
 
         $req->execute();
+
+        $lastId = $bdd->lastInsertId();
+        return $lastId;
+    }
+
+    /**
+     * Methode qui permet d'avoir un tableau associatif de tous les users
+     *
+     * @return array
+     */
+    public function getAllUsers(): array
+    {
+        $bdd = $this->connectDatabase();
+        $req = $bdd->query('SELECT `pseudo`, `email` FROM `Users`');
+        $result = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 }
