@@ -1,8 +1,12 @@
 <?php
 
+require_once '../models/Database.php';
+require_once '../models/Users.php';
+require_once '../models/Security.php';
 require_once '../models/Form.php';
 
 $regexPseudo = "/^[A-Za-z\é\è\ê\-]+$/";
+$createUser = 0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['registration'])) {
@@ -44,7 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //On verifie notre compteur et notre captcha pour savoir si on passe a la suite
         if ($compteurValidation == 4 && $captcha['success']) {
-           
+            //On instancie notre objets security pour faire securiser le post
+            $securityObj = new Security();
+            $pseudo = $securityObj->getSafePost($_POST['pseudo']);
+            $email = $securityObj->getSafePost($_POST['email']);
+            $password = $securityObj->getSafePost($_POST['password']);
+
+            //On hash le password pour l'envoyer dans la BDD
+            $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+
+            //On instancie notre objet users pour pouvoir l'ajouter a la BDD
+            $userObj = new Users();
+            $userObj->createUser($pseudo, $email, $passwordHash);
+            //Notre user est créer on affiche une modal
+            $createUser = true;
         }
     }
 }

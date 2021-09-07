@@ -76,7 +76,18 @@ require_once '../controllers/registrationControllers.php';
         </div>
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+        if (<?= $createUser ?>) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Inscription validé'
+            }).then(function() {
+                window.location = 'connection.php';
+            })
+        }
+    </script>
 </body>
 
 </html>
