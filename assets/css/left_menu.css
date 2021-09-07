@@ -14,8 +14,8 @@ body.style table {
     border-spacing: 0px;
 }
 
-table tr td{
-    padding:  0;
+table tr td {
+    padding: 0;
 }
 
 th,
@@ -102,16 +102,31 @@ h2 {
     text-align: center;
 }
 
-.red{
+.red {
     color: red;
     text-align: center;
 }
 
-.titleMenu{
+body > div > table > tbody > tr > td {
+    color: red;
+}
+
+.errorStyle {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleMenu {
     text-align: center;
     background: url(../img/bg1.gif);
 }
 
 .widthTable {
     width: 519px !important;
+}
+
+.widthTableError{
+    width: 300px !important;
 }

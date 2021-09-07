@@ -38,7 +38,7 @@ session_start();
             </div>
         </div>
     <?php } else { ?>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center errorStyle">
             <?php
             require_once '../template/error.php';
             ?>

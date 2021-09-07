@@ -118,7 +118,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="disconnect.php" style="color:red">Deconnexion</a></div>
+            <div><a href="disconnect.php" class="red">Deconnexion</a></div>
         </td>
     </tr>
 </table>
