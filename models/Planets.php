@@ -1,7 +1,7 @@
 <?php
 
 class Planets extends Database
-{   
+{
     /**
      * Methode qui permet de créer une planete pour un utilisateur qui vien de s'inscire
      *
@@ -94,5 +94,24 @@ class Planets extends Database
         ];
 
         return $link . $arrayLinkImgPlanet[$nb];
+    }
+
+    /**
+     * Methode pour recuperer les infos de la planete pour un utilisateur dans un tableau
+     *
+     * @param integer $id
+     * @return array
+     */
+    public function getInfosPlanetForOneUser(int $id): array
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('SELECT `name`, `image`, `diameter`, `field_max`, `temp_max` 
+                              FROM `Planets` 
+                              WHERE `Users_id` = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $result = $req->fetch();
+        return $result;
     }
 }

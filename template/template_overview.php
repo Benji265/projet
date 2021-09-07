@@ -1,11 +1,14 @@
+<?php
+require_once '../controllers/overviewControllers.php';
+?>
 <table class="widthTable">
     <tr>
-        <td class="c text-center" colspan="4">{Planet} "{planet_name}" ({user_username})</td>
+        <td class="c text-center" colspan="4"><?= $arrayInfosPlanet['name'] ?> / <?= $_SESSION['User']['name'] ?></td>
     </tr>
     <tr>
-        <th>{Server_time}</th>
+        <th>Heure</th>
         <th colspan="3">
-            <div>{Time}</div>
+            <div><?= date(DATE_RFC2822) ?></div>
         </th>
     </tr>
     <tr>
@@ -25,16 +28,16 @@
         </th>
     </tr>
     <tr>
-        <th>{Diameter}</th>
+        <th>Diametre</th>
         <th colspan="3">{planet_diameter} km</th>
     </tr>
-    <th>{Developed_fields}</th>
+    <th>Taille planete</th>
     <th colspan="3">
         <div class="pourcentStyle">
             <div>{case_pourcentage}</div>
     </th>
     <tr>
-        <th>{Temperature}</th>
-        <th colspan="3">{tempmin}/{tempmax}</th>
+        <th>Temperature</th>
+        <th colspan="3">0 / {tempmax}</th>
     </tr>
 </table>
