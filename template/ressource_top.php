@@ -1,3 +1,6 @@
+<?php
+require_once '../controllers/ressourceControllers.php';
+?>
 <table class="widthTable">
     <tbody>
         <tr class="text-center">
@@ -13,9 +16,9 @@
             <td>Energie</td>
         </tr>
         <tr class="text-center">
-            <td>{Métal}</td>
-            <td>{Cristal}</td>
-            <td>{Deutérium}</td>
+            <td><?= $arrayRessource['metal'] ?></td>
+            <td><?= $arrayRessource['cristal'] ?></td>
+            <td><?= $arrayRessource['deuterium'] ?></td>
             <td>{Energie}</td>
         </tr>
     </tbody>

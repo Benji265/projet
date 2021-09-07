@@ -1,7 +1,13 @@
 <?php
 
 class Planets extends Database
-{
+{   
+    /**
+     * Methode qui permet de créer une planete pour un utilisateur qui vien de s'inscire
+     *
+     * @param array $arr
+     * @return void
+     */
     public function createPlanetForOneUser(array $arr): void
     {
         $bdd = $this->connectDatabase();
@@ -27,7 +33,13 @@ class Planets extends Database
         $exec->execute($arr);
     }
 
-    public function randomImgPlanet($nb): string
+    /**
+     * Methode qui permet de créer une url pour link l'image de l'utilisateur dans la bdd
+     *
+     * @param integer $nb
+     * @return string
+     */
+    public function randomImgPlanet(int $nb): string
     {
         $link = '../assets/img/planeten/';
 

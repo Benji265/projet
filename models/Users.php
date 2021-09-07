@@ -28,14 +28,14 @@ class Users extends Database
     }
 
     /**
-     * Methode qui permet d'avoir un tableau associatif de tous les users
+     * Methode qui permet d'avoir un tableau associatif de toute les information des users
      *
      * @return array
      */
     public function getAllUsers(): array
     {
         $bdd = $this->connectDatabase();
-        $req = $bdd->query('SELECT `pseudo`, `email` FROM `Users`');
+        $req = $bdd->query('SELECT * FROM `Users`');
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }

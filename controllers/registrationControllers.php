@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //On verifie notre compteur et notre captcha pour savoir si on passe a la suite
         if ($compteurValidation == 4 && $captcha['success']) {
-            //On instancie notre objets security pour faire securiser le post
+            //On instancie notre objets security pour securiser le post
             $securityObj = new Security();
             $pseudo = $securityObj->getSafePost($_POST['pseudo']);
             $email = $securityObj->getSafePost($_POST['email']);

@@ -3,7 +3,7 @@
 class Security
 {   
     /**
-     * Methode qui permet de sécuriser les données reçus dans une variable
+     * Methode qui permet de sécuriser les données reçus par un utilisateur
      *
      * @param string $données
      * @return string

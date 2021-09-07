@@ -1,3 +1,6 @@
+<?php
+require_once '../controllers/connectionControllers.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -40,12 +43,12 @@
             <form action="connection.php" method="POST">
                 <div class="row d-flex flex-column">
                     <div class="col-auto mb-3">
-                        <label for="pseudo" class="form-label">Pseudo :</label>
-                        <input type="text" class="input" name="pseudo" id="pseudo">
+                        <label for="login" class="form-label">Pseudo :</label>
+                        <input type="text" class="input" name="login" id="login">
                     </div>
                     <div class="col-auto">
                         <label for="password" class="form-label">Mot de passe :</label>
-                        <input type="text" class="input" name="password" id="password">
+                        <input type="password" class="input" name="password" id="password">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-4 mb-3">
