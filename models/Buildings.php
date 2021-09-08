@@ -12,14 +12,14 @@ class Buildings extends Database
     {
         $bdd = $this->connectDatabase();
 
-        $req = $bdd->prepare('SELECT `name`, `level`, `metal_price`, `cristal_price`, `deuterium_price` 
+        $req = $bdd->prepare('SELECT `name`, `level`, `metal_price`, `cristal_price`, `deuterium_price`, `energy_cost`
                               FROM `Building` 
                               WHERE `Users_id` = :id');
 
         $req->bindValue(':id', $id, PDO::PARAM_INT);
 
         $req->execute();
-        $result = $req->fetch();
+        $result = $req->fetchAll();
         return $result;
     }
 }
