@@ -107,10 +107,11 @@ class Planets extends Database
         $bdd = $this->connectDatabase();
 
         $req = $bdd->prepare('SELECT `name`, `image`, `diameter`, `field_max`, `temp_max` 
-                              FROM `Planets` 
+                              FROM `Planets`
                               WHERE `Users_id` = :id');
         $req->bindValue(':id', $id, PDO::PARAM_INT);
 
+        $req->execute();
         $result = $req->fetch();
         return $result;
     }

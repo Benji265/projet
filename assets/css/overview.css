@@ -34,4 +34,5 @@ a.s {
 .pourcentStyle {
   border: 1px solid rgb(153, 153, 255);
   width: 400px;
+  margin: auto;
 }

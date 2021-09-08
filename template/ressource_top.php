@@ -19,7 +19,7 @@ require_once '../controllers/ressourceControllers.php';
             <td><?= $arrayRessource['metal'] ?></td>
             <td><?= $arrayRessource['cristal'] ?></td>
             <td><?= $arrayRessource['deuterium'] ?></td>
-            <td>{Energie}</td>
+            <td><?= $arrayRessource['energy'] ?></td>
         </tr>
     </tbody>
 </table>

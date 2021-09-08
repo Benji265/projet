@@ -12,11 +12,11 @@ require_once '../controllers/overviewControllers.php';
         </th>
     </tr>
     <tr>
-        <th>{MembersOnline}</th>
+        <th>Joueur Online</th>
         <th colspan="3">{NumberMembersOnline}</th>
     </tr>
     <tr>
-        <td colspan="4" class="c text-center">{Events}</td>
+        <td colspan="4" class="c text-center">Evenement</td>
     </tr>
     <tr>
         <th>{moon_img}<br>{moon}</th>
@@ -29,15 +29,15 @@ require_once '../controllers/overviewControllers.php';
     </tr>
     <tr>
         <th>Diametre</th>
-        <th colspan="3">{planet_diameter} km</th>
+        <th colspan="3"><?= $arrayInfosPlanet['diameter'] ?> km</th>
     </tr>
-    <th>Taille planete</th>
-    <th colspan="3">
+    <th>Place planete</th>
+    <th colspan="3 justify-content-center">
         <div class="pourcentStyle">
-            <div>{case_pourcentage}</div>
+            <div>0 / <?= $arrayInfosPlanet['field_max'] ?></div>
     </th>
     <tr>
         <th>Temperature</th>
-        <th colspan="3">0 / {tempmax}</th>
+        <th colspan="3">0 °C / <?= $arrayInfosPlanet['temp_max'] ?> °C</th>
     </tr>
 </table>

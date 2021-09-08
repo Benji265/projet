@@ -12,7 +12,7 @@ class Ressource extends Database
     {
         $bdd = $this->connectDatabase();
 
-        $req = $bdd->prepare('SELECT `metal`, `cristal`, `deuterium` 
+        $req = $bdd->prepare('SELECT `metal`, `cristal`, `deuterium`, `energy` 
                               FROM `Planets` 
                               WHERE `Users_id` = :id');
 
