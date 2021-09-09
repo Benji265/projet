@@ -14,6 +14,14 @@ $arrayBuilding = $buildingsObj->getInfosBuildingForOneUser($_SESSION['User']['id
 $researchObj = new Research();
 $arrayResearch = $researchObj->getInfosResearchForOneUser($_SESSION['User']['id']);
 
+$buildingsLevelTimeBuilt = [
+    'Mine de métal' => [
+        1 => 120,
+        2 => 360,
+        3 => 900
+    ]
+];
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['newBuilding'])) {
         switch ($_POST['buildingName']) {
@@ -24,11 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'Deuterium' => 0,
                     'Energy' => 25
                 ];
-                $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, $arrayPriceLvl2['Metal'], $arrayPriceLvl2['Cristal'], $arrayPriceLvl2['Deuterium'], $arrayPriceLvl2['Energy'], $_SESSION['User']['id']);
+                $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
+                $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, $arrayPriceLvl2['Metal'], $arrayPriceLvl2['Cristal'], $arrayPriceLvl2['Deuterium'], $arrayPriceLvl2['Energy'], false, $timestamp, $_SESSION['User']['id']);
                 break;
-            
+
             default:
-                
+
                 break;
         }
     }

@@ -4,7 +4,8 @@
             "name": "Mine de métal",
             "description": "Principal fournisseur de mati&egrave;res premi&egrave;res pour la construction de structures portantes et de vaisseaux.",
             "img" : "../assets/img/ressource/1.gif",
-            "ressource" : "Metal : 60 Cristal : 15 Energie : 11"
+            "ressource" : "Metal : 60 Cristal : 15 Energie : 11",
+            "temp_built" : "Temps de construction : 2 minute"
         },
         {
             "name": "Mine de cristal",
