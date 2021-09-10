@@ -3,6 +3,9 @@
 require_once '../models/Database.php';
 require_once '../models/Buildings.php';
 require_once '../models/Research.php';
+require_once '../models/Planets.php';
+require_once '../controllers/arrayBuildingsLevel.php';
+require_once '../controllers/arrayBuildingPrice.php';
 
 $json_file = file_get_contents('../assets/json/ressource.json');
 $json_data = json_decode($json_file, true);
@@ -14,13 +17,7 @@ $arrayBuilding = $buildingsObj->getInfosBuildingForOneUser($_SESSION['User']['id
 $researchObj = new Research();
 $arrayResearch = $researchObj->getInfosResearchForOneUser($_SESSION['User']['id']);
 
-$buildingsLevelTimeBuilt = [
-    'Mine de métal' => [
-        1 => 120,
-        2 => 360,
-        3 => 900
-    ]
-];
+$planetObj = new Planets();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['newBuilding'])) {
@@ -32,8 +29,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'Deuterium' => 0,
                     'Energy' => 25
                 ];
+
                 $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
-                $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, $arrayPriceLvl2['Metal'], $arrayPriceLvl2['Cristal'], $arrayPriceLvl2['Deuterium'], $arrayPriceLvl2['Energy'], false, $timestamp, $_SESSION['User']['id']);
+                
+                //On determine si on assez de ressource pour pouvoir construire le batiment
+                $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
+
+                if ($arrayRessourceUser['metal'] >= $arrayBuildingPrice[$_POST['buildingName']][1]['Metal']) {
+                    if ($arrayRessourceUser['cristal'] >= $arrayBuildingPrice[$_POST['buildingName']][1]['Cristal']) {
+                        $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, $arrayPriceLvl2['Metal'], $arrayPriceLvl2['Cristal'], $arrayPriceLvl2['Deuterium'], $arrayPriceLvl2['Energy'], false, $timestamp, $_SESSION['User']['id']);
+                    } else {
+                        $errorMsg['error']['cristal'] = 'Pas assez de cristal';
+                    }
+                } else {
+                    $errorMsg['error']['metal'] = 'Pas assez de metal';
+                }
                 break;
 
             default:

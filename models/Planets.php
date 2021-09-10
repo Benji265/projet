@@ -115,4 +115,17 @@ class Planets extends Database
         $result = $req->fetch();
         return $result;
     }
+
+    public function getInfosRessourceForOneUser(int $id): array
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('SELECT `metal`, `cristal`, `deuterium` FROM `Planets` WHERE `Users_id` = :id');
+
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $req->execute();
+        $result = $req->fetch();
+        return $result;
+    }
 }

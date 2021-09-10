@@ -139,7 +139,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -160,7 +160,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -181,7 +181,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -202,7 +202,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -223,7 +223,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -247,7 +247,7 @@ require_once '../controllers/buildingsControllers.php';
                                     <?php } else { ?>
                                         <tr>
                                             <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                            <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                            <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                                 <form action="buildings.php" method="POST">
                                                     <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                             <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -272,7 +272,7 @@ require_once '../controllers/buildingsControllers.php';
                             <?php } else { ?>
                                 <tr>
                                     <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                    <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                    <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                         <form action="buildings.php" method="POST">
                                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                     <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -294,7 +294,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -315,7 +315,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -336,7 +336,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
@@ -357,7 +357,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? $buildings['level'] : 0 ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
+                                <th><?= $value['name'] ?> (Niveaux <?= $value['name'] == $buildings['name'] && $buildings['level'] > 0 ? ($buildings['level'] == 1 ? 0 : $buildings['level'] - 1) : 0  ?>) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
