@@ -34,12 +34,12 @@ class Buildings extends Database
      * @param integer $userId
      * @return void
      */
-    public function createBuildingLevel1(string $name, int $level, int $metalPrice, int $cristalPrice, int $deuteriumPrice, int $energyCost, bool $built, int $timestamp, int $userId): void
+    public function createBuildingLevel1(string $name, int $level, int $metalPrice, int $cristalPrice, int $deuteriumPrice, int $energyCost, int $timeBuilt, bool $built, int $timestamp, int $userId): void
     {
         $bdd = $this->connectDatabase();
 
-        $req = $bdd->prepare('INSERT INTO `Building` (`name`, `level`, `metal_price`, `cristal_price`, `deuterium_price`, `energy_cost`, `built`, `timestamp`, `Users_id`) 
-                            VALUES (:name, :level, :metalPrice, :cristalPrice, :deuteriumPrice, :energyCost, :built, :timestamp, :userId)');
+        $req = $bdd->prepare('INSERT INTO `Building` (`name`, `level`, `metal_price`, `cristal_price`, `deuterium_price`, `energy_cost`, `built`, `time_built`, `timestamp`, `Users_id`) 
+                            VALUES (:name, :level, :metalPrice, :cristalPrice, :deuteriumPrice, :energyCost, :built, :timeBuilt, :timestamp, :userId)');
 
         $req->bindValue(':name', $name, PDO::PARAM_STR);
         $req->bindValue(':level', $level, PDO::PARAM_INT);
@@ -47,6 +47,7 @@ class Buildings extends Database
         $req->bindValue(':cristalPrice', $cristalPrice, PDO::PARAM_INT);
         $req->bindValue(':deuteriumPrice', $deuteriumPrice, PDO::PARAM_INT);
         $req->bindValue(':energyCost', $energyCost, PDO::PARAM_INT);
+        $req->bindValue(':timeBuilt', $timeBuilt, PDO::PARAM_INT);
         $req->bindValue(':built', $built, PDO::PARAM_BOOL);
         $req->bindValue(':timestamp', $timestamp, PDO::PARAM_INT);
         $req->bindValue(':userId', $userId, PDO::PARAM_INT);

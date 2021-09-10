@@ -116,16 +116,55 @@ class Planets extends Database
         return $result;
     }
 
+    /**
+     * Methode qui permet d'avoir les information des ressource pour un utilisateur
+     *
+     * @param integer $id
+     * @return array
+     */
     public function getInfosRessourceForOneUser(int $id): array
     {
         $bdd = $this->connectDatabase();
 
-        $req = $bdd->prepare('SELECT `metal`, `cristal`, `deuterium` FROM `Planets` WHERE `Users_id` = :id');
+        $req = $bdd->prepare('SELECT `metal`, `cristal`, `deuterium`, energy FROM `Planets` WHERE `Users_id` = :id');
 
         $req->bindValue(':id', $id, PDO::PARAM_INT);
 
         $req->execute();
         $result = $req->fetch();
         return $result;
+    }
+
+    /**
+     * Methode qui permet de mettre a jour les ressource d'un utilisateur apres construction d'un batiment
+     *
+     * @param integer $metalUser
+     * @param integer $metalPrice
+     * @param integer $cristalUser
+     * @param integer $cristalPrice
+     * @param integer $deuteriumUser
+     * @param integer $deuteriumPrice
+     * @param integer $energyUser
+     * @param integer $ernergyCost
+     * @param integer $id
+     * @return void
+     */
+    public function updateRessourceAfterCreate(int $metalUser, int $metalPrice, int $cristalUser, int $cristalPrice, int $deuteriumUser, int $deuteriumPrice, int $energyUser, int $ernergyCost, int $id): void
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('UPDATE `Planets` SET `metal` = (:metalUser - :metalPrice), `cristal` = (:cristalUser - :cristalPrice), `deuterium` = (:deuteriumUser - :deuteriumPrice), `energy` = (:energyUser - :energyCost) WHERE `Users_id` = :id');
+
+        $req->bindValue(':metalUser', $metalUser, PDO::PARAM_INT);
+        $req->bindValue(':metalPrice', $metalPrice, PDO::PARAM_INT);
+        $req->bindValue(':cristalUser', $cristalUser, PDO::PARAM_INT);
+        $req->bindValue(':cristalPrice', $cristalPrice, PDO::PARAM_INT);
+        $req->bindValue(':deuteriumUser', $deuteriumUser, PDO::PARAM_INT);
+        $req->bindValue(':deuteriumPrice', $deuteriumPrice, PDO::PARAM_INT);
+        $req->bindValue(':energyUser', $energyUser, PDO::PARAM_INT);
+        $req->bindValue(':energyCost', $ernergyCost, PDO::PARAM_INT);
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $req->execute();
     }
 }
