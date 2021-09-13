@@ -52,7 +52,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -75,7 +75,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -121,7 +121,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -144,7 +144,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -171,7 +171,7 @@ require_once '../controllers/buildingsControllers.php';
                         <?php } else { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                                <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                                     <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                                 <form action="buildings.php" method="POST">
                                     <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -182,7 +182,33 @@ require_once '../controllers/buildingsControllers.php';
                     <?php } ?>
                 <?php } ?>
                 <?php }
-            if ($value['name'] == 'Hangar de m&eacute;tal') {
+            if ($value['name'] == 'Chantier spatial') {
+                $infosUsineRobots = $buildingsObj->getInfosOnOneBuilding('Usine de robots', $_SESSION['User']['id']);
+                $building = $buildingsObj->getInfosOnOneBuilding($value['name'], $_SESSION['User']['id']);
+                if ($infosUsineRobots[0]['level'] >= 2) {
+                    if (empty($building)) { ?>
+                        <tr>
+                            <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
+                            <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                            <form action="buildings.php" method="POST">
+                                <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
+                                <th><input type=submit name="newBuilding" size=5 maxlength=5 value="Construire"></th>
+                            </form>
+                        </tr>
+                    <?php } else { ?>
+                        <tr>
+                            <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
+                            <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
+                                <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <form action="buildings.php" method="POST">
+                                <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
+                                <th><input type=submit name="updateBuilding" size=5 maxlength=5 value="Construire"></th>
+                            </form>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+                <?php }
+            if ($value['name'] == 'Hangar de métal') {
                 $building = $buildingsObj->getInfosOnOneBuilding($value['name'], $_SESSION['User']['id']);
                 if (empty($building)) { ?>
                     <tr>
@@ -196,7 +222,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -219,7 +245,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -228,7 +254,7 @@ require_once '../controllers/buildingsControllers.php';
                     </tr>
                 <?php } ?>
                 <?php }
-            if ($value['name'] == 'R&eacute;servoir de deut&eacute;rium') {
+            if ($value['name'] == 'Réservoir de deutérium') {
                 $building = $buildingsObj->getInfosOnOneBuilding($value['name'], $_SESSION['User']['id']);
                 if (empty($building)) { ?>
                     <tr>
@@ -242,7 +268,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -265,7 +291,7 @@ require_once '../controllers/buildingsControllers.php';
                 <?php } else { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
+                        <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
                             <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
                         <form action="buildings.php" method="POST">
                             <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">

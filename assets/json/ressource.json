@@ -51,7 +51,7 @@
             "temp_built" : "Temps de construction : 2 minute"
         },
         {
-            "name": "Hangar de m&eacute;tal",
+            "name": "Hangar de métal",
             "description": "Hangar pour minerai avant le traitement",
             "img" : "../assets/img/ressource/8.gif",
             "ressource" : "Metal : 2 000",

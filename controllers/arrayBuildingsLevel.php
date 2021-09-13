@@ -155,7 +155,7 @@ $buildingsLevelTimeBuilt = [
         19 => 2400000,
         20 => 2800000
     ],
-    'Hangar de m&eacute;tal' => [
+    'Hangar de métal' => [
         1 => 120,
         2 => 360,
         3 => 900,
@@ -199,7 +199,7 @@ $buildingsLevelTimeBuilt = [
         19 => 2400000,
         20 => 2800000
     ],
-    'R&eacute;servoir de deut&eacute;rium' => [
+    'Réservoir de deutérium' => [
         1 => 120,
         2 => 360,
         3 => 900,

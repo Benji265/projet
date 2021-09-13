@@ -84,36 +84,114 @@ function costEnergyForCentralSolairePerLevel(int $level): int
 
 function costMetalForUsineDeRobotsPerLevel(int $level): int
 {
-    $ressource = 400;
-
-    for ($i = 1; $i < $level; $i++) {
-        $result = $ressource * 2;
-        $ressource = $result;
-    }
-
-    return $ressource;
+    $formule = 400 * pow(2, $level - 1);
+    return (int) $formule;
 }
 
 function costCristalForUsineDeRobotsPerLevel(int $level): int
 {
-    $ressource = 120;
-
-    for ($i = 1; $i < $level; $i++) {
-        $result = $ressource * 2;
-        $ressource = $result;
-    }
-
-    return $ressource;
+    $formule = 120 * pow(2, $level - 1);
+    return (int) $formule;
 }
 
 function costDeuteriumForUsineDeRobotsPerLevel(int $level): int
 {
-    $ressource = 200;
+    $formule = 200 * pow(2, $level - 1);
+    return (int) $formule;
+}
 
-    for ($i = 1; $i < $level; $i++) {
-        $result = $ressource * 2;
-        $ressource = $result;
-    }
+// Usine de nanites
 
-    return $ressource;
+function costMetalForUsineDeNanitesPerLevel(int $level): int
+{
+    $formule = 1000000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costCristalForUsineDeNanitesPerLevel(int $level): int
+{
+    $formule = 500000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costDeuteriumForUsineDeNanitesPerLevel(int $level): int
+{
+    $formule = 100000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+// Chantier spatial
+
+function costMetalForChantierSpatialPerLevel(int $level): int
+{
+    $formule = 400 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costCristalForChantierSpatialPerLevel(int $level): int
+{
+    $formule = 200 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costDeuteriumForChantierSpatialPerLevel(int $level): int
+{
+    $formule = 100 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+// Hangar de métal
+
+function costMetalForHangarDeMetalPerLevel(int $level): int
+{
+    $formule = 1000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+// Hangar de cristal
+
+function costMetalForHangarDeCristalPerLevel(int $level): int
+{
+    $formule = 1000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costCristalForHangarDeCristalPerLevel(int $level): int
+{
+    $formule = 500 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+// Réservoir de deutérium
+
+function costMetalForHangarDeDeutPerLevel(int $level): int
+{
+    $formule = 1000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costCristalForHangarDeDeutPerLevel(int $level): int
+{
+    $formule = 1000 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+// Laboratoire de recherche
+
+function costMetalForLaboDeRecherchePerLevel(int $level): int
+{
+    $formule = 400 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costCristalForLaboDeRecherchePerLevel(int $level): int
+{
+    $formule = 200 * pow(2, $level - 1);
+    return (int) $formule;
+}
+
+function costDeuteriumForLaboDeRecherchePerLevel(int $level): int
+{
+    $formule = 100 * pow(2, $level - 1);
+    return (int) $formule;
 }
