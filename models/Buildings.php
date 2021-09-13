@@ -20,6 +20,26 @@ class Buildings extends Database
         $result = $req->fetchAll();
         return $result;
     }
+
+    /**
+     * Methode qui permet de recuperer les infos d'un batiment en fonction de son nom et son l'id de l'utilisateur
+     *
+     * @param string $name
+     * @return array
+     */
+    public function getInfosOnOneBuilding(string $name, int $id): array
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('SELECT * FROM `Building` WHERE `name` = :name AND `Users_id` = :id');
+
+        $req->bindValue(':name', $name, PDO::PARAM_STR);
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $req->execute();
+        $result = $req->fetchAll();
+        return $result;
+    }
     /**
      * Methode qui permet d'ajouter a la bdd la creation du 1er level d'un batiment
      *

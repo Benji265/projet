@@ -15,7 +15,7 @@
             "temp_built" : "Temps de construction : 2 minute"
         },
         {
-            "name": "Synth&eacute;tiseur de deut&eacute;rium",
+            "name": "Synthétiseur de deutérium",
             "description": "Extrait la petite quantit&eacute; de deut&eacute;rium de l'eau d'une plan&egrave;te.",
             "img" : "../assets/img/ressource/3.gif",
             "ressource" : "Metal : 225 Cristal : 75",
@@ -23,7 +23,7 @@
 
         },
         {
-            "name": "Centrale &eacute;lectrique solaire",
+            "name": "Centrale électrique solaire",
             "description": "Les centrales &eacute;lectriques solaires transforment les rayons de soleil en &eacute;nergie. Presque tous les b&acirc;timents ont besoin d'&eacute;nergie pour fonctionner.",
             "img" : "../assets/img/ressource/4.gif",
             "ressource" : "Metal : 75 Cristal : 30",

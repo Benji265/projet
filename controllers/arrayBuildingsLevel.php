@@ -45,7 +45,7 @@ $buildingsLevelTimeBuilt = [
         19 => 2400000,
         20 => 2800000
     ],
-    'Synth&eacute;tiseur de deut&eacute;rium' => [
+    'Synthétiseur de deutérium' => [
         1 => 120,
         2 => 360,
         3 => 900,
@@ -67,7 +67,7 @@ $buildingsLevelTimeBuilt = [
         19 => 2400000,
         20 => 2800000
     ],
-    'Centrale &eacute;lectrique solaire' => [
+    'Centrale électrique solaire' => [
         1 => 120,
         2 => 360,
         3 => 900,
