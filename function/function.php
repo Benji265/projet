@@ -60,7 +60,7 @@ function costEnergyForDeuteriumPerLevel(int $level): int
     return (int) $formule;
 }
 
-// Synthétiseur de deutérium
+// Centrale électrique solaire
 
 function costMetalForCentralSolairePerLevel(int $level): int
 {
@@ -200,6 +200,53 @@ function costDeuteriumForLaboDeRecherchePerLevel(int $level): int
 
 function timeBuiltForBuilding($metal, $cristal, $robots, $nanites)
 {
-    $result = (($metal + $cristal) / 2500) * (1 / (1 + $robots)) * pow(0.5, $nanites); 
+    $result = (($metal + $cristal) / 2500) * (1 / (1 + $robots)) * pow(0.5, $nanites);
+    //On transforme le resultat en seconde
     return ceil($result * 3600);
+}
+
+//Affichage du temps de construction
+
+function displayTimeBuilt($metal, $cristal, $robots, $nanites)
+{
+    $s = timeBuiltForBuilding($metal, $cristal, $robots, $nanites);
+    $m = $s / 60;
+    $h = $m / 60;
+    $d = $h / 24;
+
+    $s_remaining = floor(timeBuiltForBuilding($metal, $cristal, $robots, $nanites) % 60);
+    $m_remaining = floor($m % 60);
+    $h_remaining = floor($h % 24);
+    $d_remaining = floor($d);
+
+    if ($d_remaining == 0 && $h_remaining == 0 && $m_remaining == 0) {
+        return $s_remaining . ' secondes';
+    } elseif ($d_remaining == 0 && $h_remaining == 0) {
+        if($s_remaining == 0){
+            return $m_remaining . ' minutes ';
+        } else {
+            return $m_remaining . ' minutes ' . $s_remaining . ' secondes';
+        }
+    } elseif ($d_remaining == 0) {
+        if ($s_remaining == 0 && $m_remaining == 0) {
+            return $h_remaining . ' heures ';
+        } elseif ($s_remaining == 0) {
+            return $h_remaining . ' heures ' . $m_remaining . ' minutes ';
+        } else {
+            return $h_remaining . ' heures ' . $m_remaining . ' minutes ' . $s_remaining . ' secondes';
+        }
+    } else {
+        if ($s_remaining == 0 && $m_remaining == 0 && $h_remaining == 0) {
+            return $d_remaining . ' jours';
+        } elseif ($s_remaining == 0 && $m_remaining == 0) {
+            return $d_remaining . ' jours ' . $h_remaining . ' heures ';
+        } elseif ($s_remaining == 0) {
+            return $d_remaining . ' jours ' . $h_remaining . ' heures ' . $m_remaining . ' minutes ';
+        } else {
+            return $d_remaining . ' jours ' . $h_remaining . ' heures ' . $m_remaining . ' minutes ' . $s_remaining . ' secondes';
+        }
+    }
+
+
+
 }

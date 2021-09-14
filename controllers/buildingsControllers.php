@@ -4,7 +4,6 @@ require_once '../models/Database.php';
 require_once '../models/Buildings.php';
 require_once '../models/Research.php';
 require_once '../models/Planets.php';
-//require_once '../controllers/arrayBuildingsLevel.php';
 require_once '../controllers/arrayBuildingPrice.php';
 require_once '../function/function.php';
 

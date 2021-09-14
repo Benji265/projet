@@ -69,21 +69,21 @@ session_start();
                     jours = '';
                     mot_jour = '';
                 } else if (jours == 1) {
-                    mot_jour = "jour,";
+                    mot_jour = "jour";
                 }
 
                 if (heures == 0) {
                     heures = '';
                     mot_heure = '';
                 } else if (heures == 1) {
-                    mot_heure = "heure,";
+                    mot_heure = "heure";
                 }
 
                 if (minutes == 0) {
                     minutes = '';
                     mot_minute = '';
                 } else if (minutes == 1) {
-                    mot_minute = "minute,";
+                    mot_minute = "minute";
                 }
 
                 if (secondes == 0) {

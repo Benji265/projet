@@ -8,11 +8,8 @@ require_once '../controllers/buildingsControllers.php';
         <?php foreach ($arrayBuilding as $buildings) {
             if ($buildings['built'] == 0) {
 
-                //On recupere les infos necessaire pour calculer le temps de contruction
-                $infosUsineRobots = $buildingsObj->getInfosOnOneBuilding('Usine de robots', $_SESSION['User']['id']);
-                $infosUsineNanites = $buildingsObj->getInfosOnOneBuilding('Usine de nanites', $_SESSION['User']['id']);
+                require_once '../controllers/arrayBuildingsLevel.php';
 
-                $temp = $buildings['timestamp'] + timeBuiltForBuilding($buildingsLevelTimeBuilt[$buildings['name']][$buildings['level']]['Metal'], $buildingsLevelTimeBuilt[$buildings['name']][$buildings['level']]['Cristal'], $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
                 $temp_remaining = $temp - time();
 
                 if ($temp_remaining > 0) {
@@ -44,7 +41,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForMineDeMetalPerLevel(1), costCristalForMineDeMetalPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -58,7 +55,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForMineDeMetalPerLevel($building[0]['level'] + 1), costCristalForMineDeMetalPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -76,7 +73,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForMineDeCristalPerLevel(1), costCristalForMineDeCristalPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -90,7 +87,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForMineDeCristalPerLevel($building[0]['level'] + 1), costCristalForMineDeCristalPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -108,7 +105,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForDeuteriumPerLevel(1), costCristalForDeuteriumPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -122,7 +119,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= $building[0]['built'] == 1 && $building[0]['level'] == 1 ? ($building[0]['built'] == 0 && $building[0]['level'] > 1 ? ($building[0]['level'] - 1) : $building[0]['level']) : 0 ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForDeuteriumPerLevel($building[0]['level'] + 1), costCristalForDeuteriumPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -140,7 +137,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForCentralSolairePerLevel(1), costCristalForCentralSolairePerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -154,7 +151,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForCentralSolairePerLevel($building[0]['level'] + 1), costCristalForCentralSolairePerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -172,7 +169,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForUsineDeRobotsPerLevel(1), costCristalForUsineDeRobotsPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -186,7 +183,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForUsineDeRobotsPerLevel($building[0]['level'] + 1), costCristalForUsineDeRobotsPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -208,7 +205,7 @@ require_once '../controllers/buildingsControllers.php';
                         if (empty($building)) { ?>
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                                <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                                <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForUsineDeNanitesPerLevel(1), costCristalForUsineDeNanitesPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                                 <?php if (empty($building)) { ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -222,7 +219,7 @@ require_once '../controllers/buildingsControllers.php';
                             <tr>
                                 <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                                 <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                                    <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                                    <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForUsineDeNanitesPerLevel($building[0]['level'] + 1), costCristalForUsineDeNanitesPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                                 <?php if ($building[0]['built'] == 1) { ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -244,7 +241,7 @@ require_once '../controllers/buildingsControllers.php';
                     if (empty($building)) { ?>
                         <tr>
                             <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                            <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                            <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForChantierSpatialPerLevel(1), costCristalForChantierSpatialPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                             <?php if (empty($building)) { ?>
                                 <form action="buildings.php" method="POST">
                                     <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -258,7 +255,7 @@ require_once '../controllers/buildingsControllers.php';
                         <tr>
                             <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                             <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                                <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                                <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForChantierSpatialPerLevel($building[0]['level'] + 1), costCristalForChantierSpatialPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                             <?php if ($building[0]['built'] == 1) { ?>
                                 <form action="buildings.php" method="POST">
                                     <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -277,7 +274,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForHangarDeMetalPerLevel(1), 0, $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -291,7 +288,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForHangarDeMetalPerLevel($building[0]['level'] + 1), 0, $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -309,7 +306,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForHangarDeCristalPerLevel(1), costCristalForHangarDeCristalPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -323,7 +320,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForHangarDeCristalPerLevel($building[0]['level'] + 1), costCristalForHangarDeCristalPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -341,7 +338,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForHangarDeDeutPerLevel(1), costCristalForHangarDeDeutPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -355,7 +352,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForHangarDeDeutPerLevel($building[0]['level'] + 1), costCristalForHangarDeDeutPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -373,7 +370,7 @@ require_once '../controllers/buildingsControllers.php';
                 if (empty($building)) { ?>
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
-                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> <?= $value['temp_built'] ?></th>
+                        <th><?= $value['name'] ?> (Niveaux 0) <br><br><?= $value['description'] ?> <br><br> <?= $value['ressource'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForLaboDeRecherchePerLevel(1), costCristalForLaboDeRecherchePerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building)) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
@@ -387,7 +384,7 @@ require_once '../controllers/buildingsControllers.php';
                     <tr>
                         <th><img src="<?= $value['img'] ?>" alt="<?= $value['name'] ?>"></th>
                         <th><?= $value['name'] ?> (Niveaux <?= ($building[0]['built'] == 0 && $building[0]['level'] == 1) ? 0 : (($building[0]['built'] == 0 && $building[0]['level'] > 1) ? ($building[0]['level'] - 1) : $building[0]['level']) ?>) <br><br><?= $value['description'] ?> <br><br>
-                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= $building[0]['time_built'] / 60 ?> Minute</th>
+                            <?= $building[0]['metal_price'] == 0 ? '' : 'Metal : ' . $building[0]['metal_price'] ?> <?= $building[0]['cristal_price'] == 0 ? '' : 'Cristal : ' . $building[0]['cristal_price'] ?> <?= $building[0]['deuterium'] == 0 ? '' : 'Deuterium : ' . $building[0]['deuterium'] ?> <?= $building[0]['energy_cost'] == 0 ? '' : 'Energie : ' . $building[0]['energy_cost'] ?> <br><br> Temps de construction : <?= displayTimeBuilt(costMetalForLaboDeRecherchePerLevel($building[0]['level'] + 1), costCristalForLaboDeRecherchePerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">

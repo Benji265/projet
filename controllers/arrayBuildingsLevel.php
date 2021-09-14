@@ -1,228 +1,45 @@
 <?php
 
-$buildingsLevelTimeBuilt = [
-    'Mine de métal' => [
-        'Metal' => costMetalForMineDeMetalPerLevel(''),
-        'Cristal' => costCristalForMineDeMetalPerLevel('')
-    ],
-    'Mine de cristal' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Synthétiseur de deutérium' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Centrale électrique solaire' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Usine de robots' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Usine de nanites' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Chantier spatial' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Hangar de métal' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Hangar de cristal' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Réservoir de deutérium' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ],
-    'Laboratoire de recherche' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
-    ]
-];
+if ($buildings['name'] == 'Mine de métal') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForMineDeMetalPerLevel($buildings['level']), costCristalForMineDeMetalPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Mine de cristal') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForMineDeCristalPerLevel($buildings['level']), costCristalForMineDeCristalPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Synthétiseur de deutérium') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForDeuteriumPerLevel($buildings['level']), costCristalForDeuteriumPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Centrale électrique solaire') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForCentralSolairePerLevel($buildings['level']), costCristalForCentralSolairePerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Usine de robots') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForUsineDeRobotsPerLevel($buildings['level']), costCristalForUsineDeRobotsPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Usine de nanites') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForUsineDeNanitesPerLevel($buildings['level']), costCristalForUsineDeNanitesPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Chantier spatial') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForChantierSpatialPerLevel($buildings['level']), costCristalForChantierSpatialPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Hangar de métal') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForHangarDeMetalPerLevel($buildings['level']), 0, $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Hangar de cristal') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForHangarDeCristalPerLevel($buildings['level']), costCristalForHangarDeCristalPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Réservoir de deutérium') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForHangarDeDeutPerLevel($buildings['level']), costCristalForHangarDeDeutPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
+
+if ($buildings['name'] == 'Laboratoire de recherche') {
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForLaboDeRecherchePerLevel($buildings['level']), costCristalForLaboDeRecherchePerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+}
