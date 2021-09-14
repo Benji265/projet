@@ -12,7 +12,7 @@ switch ($_POST['buildingName']) {
         if ($arrayRessourceUser['metal'] >= costMetalForMineDeMetalPerLevel(1)) {
             if ($arrayRessourceUser['cristal'] >= costCristalForMineDeMetalPerLevel(1)) {
                 //On créer le batiment
-                $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, costMetalForMineDeMetalPerLevel(2), costCristalForMineDeMetalPerLevel(2), 0, costEnergyForMineDeMetalPerLevel(2), 360, false, $timestamp, $_SESSION['User']['id']);
+                $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, costMetalForMineDeMetalPerLevel(2), costCristalForMineDeMetalPerLevel(2), 0, costEnergyForMineDeMetalPerLevel(2), timeBuiltForBuilding(costMetalForMineDeMetalPerLevel(2), costCristalForMineDeMetalPerLevel(2), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']), false, $timestamp, $_SESSION['User']['id']);
                 //On update les ressource qu'on vien de dépenser
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForMineDeMetalPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForMineDeMetalPerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForMineDeMetalPerLevel(1), $_SESSION['User']['id']);
             } else {

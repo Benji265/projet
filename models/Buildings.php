@@ -90,4 +90,61 @@ class Buildings extends Database
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
     }
+
+    /**
+     * Methode qui permet d'update un batiment
+     *
+     * @param integer $level
+     * @param integer $metalPrice
+     * @param integer $cristalPrice
+     * @param integer $deuteriumPrice
+     * @param integer $energyCost
+     * @param integer $timeBuilt
+     * @param integer $timestamp
+     * @param integer $userId
+     * @param string $name
+     * @return void
+     */
+    public function updateBuilding(int $level, int $metalPrice, int $cristalPrice, int $deuteriumPrice, int $energyCost, int $timeBuilt, int $timestamp, int $userId, string $name): void
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('UPDATE `Building` SET `level` = :level ,
+                                                    `metal_price` = :metalPrice,
+                                                    `cristal_price` = :cristalPrice,
+                                                    `deuterium_price` = :deuteriumPrice,
+                                                    `energy_cost` = :energyCost,
+                                                    `time_built` = :timeBuilt,
+                                                    `built` = 0,
+                                                    `timestamp` = :timestamp
+                            WHERE `Users_id` = :userId AND `name` = :name');
+
+        $req->bindValue(':level', $level, PDO::PARAM_INT);
+        $req->bindValue(':metalPrice', $metalPrice, PDO::PARAM_INT);
+        $req->bindValue(':cristalPrice', $cristalPrice, PDO::PARAM_INT);
+        $req->bindValue(':deuteriumPrice', $deuteriumPrice, PDO::PARAM_INT);
+        $req->bindValue(':energyCost', $energyCost, PDO::PARAM_INT);
+        $req->bindValue(':timeBuilt', $timeBuilt, PDO::PARAM_INT);
+        $req->bindValue(':timestamp', $timestamp, PDO::PARAM_INT);
+        $req->bindValue(':userId', $userId, PDO::PARAM_INT);
+        $req->bindValue(':name', $name, PDO::PARAM_STR);
+
+        $req->execute();
+    }
+
+    /**
+     * Methode qui permet de recuperer le nombre de batiment en construction
+     *
+     * @return int
+     */
+    public function countListBuilt(): array
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->query("SELECT COUNT(*) AS 'CountListBuilt' FROM `Building` WHERE `built` = 0");
+
+        $req->execute();
+        $result = $req->fetch();
+        return $result;
+    }
 }

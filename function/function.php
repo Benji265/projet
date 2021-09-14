@@ -195,3 +195,11 @@ function costDeuteriumForLaboDeRecherchePerLevel(int $level): int
     $formule = 100 * pow(2, $level - 1);
     return (int) $formule;
 }
+
+// Temps de construction
+
+function timeBuiltForBuilding($metal, $cristal, $robots, $nanites)
+{
+    $result = (($metal + $cristal) / 2500) * (1 / (1 + $robots)) * pow(0.5, $nanites); 
+    return ceil($result * 3600);
+}

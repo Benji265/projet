@@ -2,26 +2,8 @@
 
 $buildingsLevelTimeBuilt = [
     'Mine de métal' => [
-        1 => 120,
-        2 => 360,
-        3 => 900,
-        4 => 1800,
-        5 => 3600,
-        6 => 7200,
-        7 => 15000,
-        8 => 45000,
-        9 => 100000,
-        10 => 150000,
-        11 => 200000,
-        12 => 300000,
-        13 => 500000,
-        14 => 700000,
-        15 => 1000000,
-        16 => 1300000,
-        17 => 1600000,
-        18 => 2000000,
-        19 => 2400000,
-        20 => 2800000
+        'Metal' => costMetalForMineDeMetalPerLevel(''),
+        'Cristal' => costCristalForMineDeMetalPerLevel('')
     ],
     'Mine de cristal' => [
         1 => 120,
