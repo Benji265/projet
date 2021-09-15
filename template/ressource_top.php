@@ -19,7 +19,11 @@ require_once '../controllers/ressourceControllers.php';
             <td><?= $arrayRessource['metal'] ?></td>
             <td><?= $arrayRessource['cristal'] ?></td>
             <td><?= $arrayRessource['deuterium'] ?></td>
-            <td><?= $arrayRessource['energy'] ?></td>
+            <?php if ($arrayRessource['energy'] > 0) { ?>
+                <td><?= $arrayRessource['energy'] ?></td>
+            <?php } else { ?>
+                <td><span class="red"><?= $arrayRessource['energy'] ?></span></td>
+            <?php } ?>
         </tr>
     </tbody>
 </table>
