@@ -5,7 +5,7 @@ if ($buildings['name'] == 'Mine de métal') {
 }
 
 if ($buildings['name'] == 'Mine de cristal') {
-    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForMineDeCristalPerLevel($buildings['level']), costCristalForMineDeCristalPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+     $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForMineDeCristalPerLevel($buildings['level']), costCristalForMineDeCristalPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
 }
 
 if ($buildings['name'] == 'Synthétiseur de deutérium') {

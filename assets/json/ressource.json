@@ -4,79 +4,68 @@
             "name": "Mine de métal",
             "description": "Principal fournisseur de mati&egrave;res premi&egrave;res pour la construction de structures portantes et de vaisseaux.",
             "img" : "../assets/img/ressource/1.gif",
-            "ressource" : "Metal : 60 Cristal : 15 Energie : 11",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 60 Cristal : 15 Energie : 11"
         },
         {
             "name": "Mine de cristal",
             "description": "Fournisseur principal de ressources pour les installations &eacute;lectroniques et pour les alliages.",
             "img" : "../assets/img/ressource/2.gif",
-            "ressource" : "Metal : 48 Cristal : 24 Energie : 11",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 48 Cristal : 24 Energie : 11"
         },
         {
             "name": "Synthétiseur de deutérium",
             "description": "Extrait la petite quantit&eacute; de deut&eacute;rium de l'eau d'une plan&egrave;te.",
             "img" : "../assets/img/ressource/3.gif",
-            "ressource" : "Metal : 225 Cristal : 75",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 225 Cristal : 75"
 
         },
         {
             "name": "Centrale électrique solaire",
             "description": "Les centrales &eacute;lectriques solaires transforment les rayons de soleil en &eacute;nergie. Presque tous les b&acirc;timents ont besoin d'&eacute;nergie pour fonctionner.",
             "img" : "../assets/img/ressource/4.gif",
-            "ressource" : "Metal : 75 Cristal : 30",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 75 Cristal : 30"
         },
         {
             "name": "Usine de robots",
             "description": "Les usines de robots produisent des robots ouvriers qui servent &agrave; la construction de l'infrastructure plan&eacute;taire. Chaque niveau augmente la vitesse de construction des diff&eacute;rents b&acirc;timents.",
             "img" : "../assets/img/ressource/5.gif",
-            "ressource" : "Metal : 400 Cristal : 120 Deuterium : 200",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 400 Cristal : 120 Deuterium : 200"
         },
         {
             "name": "Usine de nanites",
             "description": "C'est le perfectionnement de la technologie de robots. Chaque niveau augmente la vitesse de construction des vaisseaux et des b&acirc;timents.",
             "img" : "../assets/img/ressource/6.gif",
-            "ressource" : "Metal : 1 000 000 Cristal : 500 000 Deuterium : 100 000",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 1 000 000 Cristal : 500 000 Deuterium : 100 000"
         },
         {
             "name": "Chantier spatial",
             "description": "Le chantier spatial permet de construire les vaisseaux et les installations de d&eacute;fense.",
             "img" : "../assets/img/ressource/7.gif",
-            "ressource" : "Metal : 400 Cristal : 200 Deuterium : 100",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 400 Cristal : 200 Deuterium : 100"
         },
         {
             "name": "Hangar de métal",
             "description": "Hangar pour minerai avant le traitement",
             "img" : "../assets/img/ressource/8.gif",
-            "ressource" : "Metal : 2 000",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 2 000"
         },
         {
             "name": "Hangar de cristal",
             "description": "Hangar pour cristal avant le traitement.",
             "img" : "../assets/img/ressource/9.gif",
-            "ressource" : "Metal : 2 000 Cristal : 1 000",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 2 000 Cristal : 1 000"
         },
         {
             "name": "R&eacute;servoir de deut&eacute;rium",
             "description": "R&eacute;servoirs g&eacute;ants pour le stockage de deut&eacute;rium.",
             "img" : "../assets/img/ressource/10.gif",
-            "ressource" : "Metal : 2 000 Cristal : 2 000",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 2 000 Cristal : 2 000"
         },
         {
             "name": "Laboratoire de recherche",
             "description": "Le laboratoire de recherche est n&eacute;cessaire pour d&eacute;velopper de nouvelles technologies.",
             "img" : "../assets/img/ressource/11.gif",
-            "ressource" : "Metal : 200 Cristal : 400 Deuterium : 200",
-            "temp_built" : "Temps de construction : 2 minute"
+            "ressource" : "Metal : 200 Cristal : 400 Deuterium : 200"
         }
     ],
     "research": [

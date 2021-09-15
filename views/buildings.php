@@ -48,58 +48,64 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         function compte_a_rebours() {
-            var compte_a_rebours = document.getElementById("compte_a_rebours");
 
-            var date_actuelle = new Date();
-            var date_evenement = <?= $temp * 1000 ?>;
-            var total_secondes = (date_evenement - date_actuelle) / 1000;
+            const selectTimer = document.querySelectorAll('th[id=timer]');
+            selectTimer.forEach(element => {
 
-            if (total_secondes > 0) {
-                var jours = Math.floor(total_secondes / (60 * 60 * 24));
-                var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
-                var minutes = Math.floor((total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
-                var secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
+                var actualDate = new Date();
+                var event = element.dataset.timebuilt * 1000
+                var total_secondes = (event - actualDate) / 1000;
 
-                var mot_jour = "jours,";
-                var mot_heure = "heures,";
-                var mot_minute = "minutes";
-                var mot_seconde = "secondes";
+                if (total_secondes > 0) {
+                    var jours = Math.floor(total_secondes / (60 * 60 * 24));
+                    var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
+                    var minutes = Math.floor((total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
+                    var secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
 
-                if (jours == 0) {
-                    jours = '';
-                    mot_jour = '';
-                } else if (jours == 1) {
-                    mot_jour = "jour";
+                    var mot_jour = "jours";
+                    var mot_heure = "heures";
+                    var mot_minute = "minutes";
+                    var mot_seconde = "secondes";
+
+                    if (jours == 0) {
+                        jours = '';
+                        mot_jour = '';
+                    } else if (jours == 1) {
+                        mot_jour = "jour";
+                    }
+
+                    if (heures == 0) {
+                        heures = '';
+                        mot_heure = '';
+                    } else if (heures == 1) {
+                        mot_heure = "heure";
+                    }
+
+                    if (minutes == 0) {
+                        minutes = '';
+                        mot_minute = '';
+                    } else if (minutes == 1) {
+                        mot_minute = "minute";
+                    }
+
+                    if (secondes == 0) {
+                        secondes = '';
+                        mot_seconde = '';
+                    } else if (secondes == 1) {
+                        mot_seconde = "seconde";
+                    }
+
+                    element.innerHTML = jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + secondes + ' ' + mot_seconde;
+
                 }
 
-                if (heures == 0) {
-                    heures = '';
-                    mot_heure = '';
-                } else if (heures == 1) {
-                    mot_heure = "heure";
-                }
-
-                if (minutes == 0) {
-                    minutes = '';
-                    mot_minute = '';
-                } else if (minutes == 1) {
-                    mot_minute = "minute";
-                }
-
-                if (secondes == 0) {
-                    secondes = '';
-                    mot_seconde = '';
-                } else if (secondes == 1) {
-                    mot_seconde = "seconde";
-                }
-
-                compte_a_rebours.innerHTML = jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + secondes + ' ' + mot_seconde;
-            }
-
-            var actualisation = setTimeout("compte_a_rebours();", 1000);
+            });
+            
+            setTimeout(compte_a_rebours, 1000);
         }
 
         compte_a_rebours();
+
     </script>
 </body>
 
