@@ -113,7 +113,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div><a href="options.php">{Options}</a></div>
+            <div><a href="options.php">Options</a></div>
         </td>
     </tr>
     <tr>

@@ -1,0 +1,14 @@
+.noStyleButton {
+    background-color: transparent;
+    border: none;
+}
+
+.noStyleButton:hover {
+    background-image: url(../img/link.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 100%;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: Tahoma, sans-serif;
+}

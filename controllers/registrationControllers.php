@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $userObj = new Users();
             $arrayUsers = $userObj->getAllUsers();
 
-            //On parcours notre tableaux pour verifier que le pseudo et l'email choisi sont différent
+            //On parcours notre tableaux pour verifier que le pseudo et l'email choisi sont pas deja pris
             foreach ($arrayUsers as $value) {
                 if ($pseudo != $value['pseudo']) {
                     $errorMsg['pseudo'] = true;

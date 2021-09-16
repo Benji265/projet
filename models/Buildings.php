@@ -147,4 +147,39 @@ class Buildings extends Database
         $result = $req->fetch();
         return $result;
     }
+
+    /**
+     * Methode qui permet d'annuler un batiment en cours de construction
+     *
+     * @param integer $level
+     * @param integer $metalPrice
+     * @param integer $cristalPrice
+     * @param integer $deuteriumPrice
+     * @param integer $energyCost
+     * @param integer $userId
+     * @param string $name
+     * @return void
+     */
+    public function cancelBuilding(int $level, int $metalPrice, int $cristalPrice, int $deuteriumPrice, int $energyCost, int $userId, string $name): void
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('UPDATE `Building` SET `level` = :level,
+                                                    `metal_price` = :metalPrice,
+                                                    `cristal_price` = :cristalPrice,
+                                                    `deuterium_price` = :deuteriumPrice,
+                                                    `energy_cost` = :energyCost,
+                                                    `built` = 1
+                            WHERE `Users_id` = :userId AND `name` = :name');
+
+        $req->bindValue(':level', $level, PDO::PARAM_INT);
+        $req->bindValue(':metalPrice', $metalPrice, PDO::PARAM_INT);
+        $req->bindValue(':cristalPrice', $cristalPrice, PDO::PARAM_INT);
+        $req->bindValue(':deuteriumPrice', $deuteriumPrice, PDO::PARAM_INT);
+        $req->bindValue(':energyCost', $energyCost, PDO::PARAM_INT);
+        $req->bindValue(':userId', $userId, PDO::PARAM_INT);
+        $req->bindValue(':name', $name, PDO::PARAM_STR);
+
+        $req->execute();
+    }
 }

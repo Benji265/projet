@@ -22,7 +22,6 @@ $planetObj = new Planets();
 $infosUsineRobots = $buildingsObj->getInfosOnOneBuilding('Usine de robots', $_SESSION['User']['id']);
 $infosUsineNanites = $buildingsObj->getInfosOnOneBuilding('Usine de nanites', $_SESSION['User']['id']);
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['newBuilding'])) {
         require_once '../controllers/createLvl1Buildings.php';
@@ -30,5 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['updateBuilding'])) {
         require_once '../controllers/updateBuilding.php';
+    }
+
+    if (isset($_POST['cancel'])) {
+        require_once '../controllers/cancelBuildings.php';
     }
 }

@@ -1,0 +1,9 @@
+input:focus{
+    outline: none;
+}
+
+.errorMsg {
+    font-style: italic;
+    color: red;
+    font-size: 10px;
+}

@@ -198,7 +198,7 @@ function costDeuteriumForLaboDeRecherchePerLevel(int $level): int
 
 // Temps de construction
 
-function timeBuiltForBuilding($metal, $cristal, $robots, $nanites)
+function timeBuiltForBuilding(int $metal, int $cristal, $robots, $nanites): int
 {
     $result = (($metal + $cristal) / 2500) * (1 / (1 + $robots)) * pow(0.5, $nanites);
     //On transforme le resultat en seconde
@@ -207,7 +207,7 @@ function timeBuiltForBuilding($metal, $cristal, $robots, $nanites)
 
 //Affichage du temps de construction
 
-function displayTimeBuilt($metal, $cristal, $robots, $nanites)
+function displayTimeBuilt(int $metal, int $cristal, $robots, $nanites)
 {
     $s = timeBuiltForBuilding($metal, $cristal, $robots, $nanites);
     $m = $s / 60;

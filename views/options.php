@@ -12,7 +12,7 @@ session_start();
     <link rel="stylesheet" href="../assets/css/left_menu.css">
     <link rel="stylesheet" href="../assets/css/ressource_top.css">
     <link rel="stylesheet" href="../assets/css/styleMobile.css">
-    <link rel="stylesheet" href="../assets/css/buildings.css">
+    <link rel="stylesheet" href="../assets/css/options.css">
     <title>Overview</title>
 </head>
 
@@ -33,7 +33,7 @@ session_start();
             </div>
             <div class="col-lg-8 col-12">
                 <?php
-                require_once '../template/template_buildings.php';
+                require_once '../template/template_options.php';
                 ?>
             </div>
         </div>
@@ -47,7 +47,6 @@ session_start();
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="../assets/js/timerBuilding.js"></script>
 </body>
 
 </html>
