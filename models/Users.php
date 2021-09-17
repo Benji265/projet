@@ -56,6 +56,14 @@ class Users extends Database
         return $result;
     }
 
+    /**
+     * Methode qui permet d'update un utilisateur apres changement de ces options
+     *
+     * @param string $pseudo
+     * @param string $email
+     * @param integer $id
+     * @return void
+     */
     public function updateOneUser(string $pseudo, string $email, int $id): void
     {
         $bdd = $this->connectDatabase();
@@ -66,6 +74,14 @@ class Users extends Database
         $req->bindValue(':email', $email, PDO::PARAM_STR);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
 
+        $req->execute();
+    }
+
+    public function deleteUser($id): void
+    {
+        $bdd = $this->connectDatabase();
+        $req = $bdd->prepare('DELETE FROM `Users` WHERE `Users_id` = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
     }
 }

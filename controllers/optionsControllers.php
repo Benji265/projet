@@ -8,6 +8,11 @@ require_once '../models/Planets.php';
 $usersObj = new Users();
 $arrayUser = $usersObj->getOneUser($_SESSION['User']['id']);
 
+$validOption = 0;
+$validModif = 0;
+$validDelete = 0;
+$deleteAccount = 0;
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['modifyUser'])) {
 
@@ -46,10 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($arrayUser['email'] == $email) {
             $errorMsg['email'] = true;
         }
+
+
+        if ($errorMsg['pseudo'] == 1 && $errorMsg['email'] == 1) {
+            $validOption = true;
+            $_SESSION['Option']['pseudo'] = $pseudo;
+            $_SESSION['Option']['email'] = $email;
+            $_SESSION['Option']['planets'] = $planets;
+            $_SESSION['Option']['delete'] = $_POST['delete'];
+        }
     }
 
     if (isset($_POST['validModify'])) {
-
         $securityObj = new Security();
         $passwordOne = $securityObj->getSafePost($_POST['password']);
         $passwordTwo = $securityObj->getSafePost($_POST['confirmPassword']);
@@ -70,9 +83,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         if ($errorMsg['password'] == 1) {
-            $planetsObj = new Planets();
-            $usersObj->updateOneUser($pseudo, $email, $_SESSION['User']['id']);
-            $planetsObj->updateNamePlanets($planets, $_SESSION['User']['id']);
+            if ($_SESSION['Option']['delete'] == 'on') {
+                $validDelete = true;
+            } else {
+                $planetsObj = new Planets();
+                $usersObj->updateOneUser($_SESSION['Option']['pseudo'], $_SESSION['Option']['email'], $_SESSION['User']['id']);
+                $planetsObj->updateNamePlanets($_SESSION['Option']['planets'], $_SESSION['User']['id']);
+                $validModif = true;
+            }
         }
+    }
+
+    if (isset($_POST['deleteAccount'])) {
+        $usersObj->deleteUser($_SESSION['User']['id']);
+        $deleteAccount = true;
     }
 }

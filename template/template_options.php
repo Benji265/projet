@@ -1,7 +1,7 @@
 <?php
 require_once '../controllers/optionsControllers.php';
 ?>
-<?php if ($errorMsg['pseudo'] != 1 || $errorMsg['email'] != 1) { ?>
+<?php if (empty($_GET)) { ?>
     <form action="options.php" method="POST">
         <table class="widthTable">
             <tbody>
@@ -30,23 +30,50 @@ require_once '../controllers/optionsControllers.php';
             </tbody>
         </table>
     </form>
-<?php } elseif ($errorMsg['pseudo'] == 1 && $errorMsg['email'] == 1) { ?>
-    <form action="options.php" method="POST">
+<?php } elseif ($_GET['validModify'] == 'no') { ?>
+    <form action="options.php?validModify=no" method="POST">
         <table class="widthTable">
             <tbody>
                 <tr>
                     <th colspan="4" class="titleMenu">Valider</th>
                 </tr>
                 <tr>
-                    <th class="colspan2">Mot de passe : <span><?= $errorMsg['pseudo'] == 1 ? '' : $errorMsg['pseudo'] ?></span></th>
-                    <th class="colspan2"><input type="password" name="password"></th>
+                    <th colspan="2">Mot de passe : <span><?= $errorMsg['pseudo'] == 1 ? '' : $errorMsg['pseudo'] ?></span></th>
+                    <th colspan="2"><input type="password" name="password"></th>
                 </tr>
                 <tr>
-                    <th class="colspan2">Confirmation de mot de passe :</th>
-                    <th class="colspan2"><input type="password" name="confirmPassword"></th>
+                    <th colspan="2">Confirmation de mot de passe :</th>
+                    <th colspan="2"><input type="password" name="confirmPassword"></th>
                 </tr>
                 <tr>
                     <th colspan="4"><input type="submit" name="validModify" value="Valider"></th>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+<?php } elseif ($_GET['validModify'] == 'yes') { ?>
+    <table class="widthTable">
+        <tbody>
+            <tr>
+                <th colspan="4" class="titleMenu">Confirmation</th>
+            </tr>
+            <tr>
+                <th colspan="4" class="red">Vos information ont bien été changer</th>
+            </tr>
+        </tbody>
+    </table>
+<?php } elseif ($_GET['validDelete'] == 'yes') { ?>
+    <form action="options.php?validDelete=yes" method="POST">
+        <table class="widthTable">
+            <tbody>
+                <tr>
+                    <th colspan="4" class="titleMenu">Suppression</th>
+                </tr>
+                <tr>
+                    <th colspan="4" class="red">Votre compte va être supprimer etes vous sur de vouloir le supprimer ?</th>
+                </tr>
+                <tr>
+                    <th colspan="4"><input type="submit" name="deleteAccount" value="Valider"></th>
                 </tr>
             </tbody>
         </table>

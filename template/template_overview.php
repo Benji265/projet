@@ -3,7 +3,7 @@ require_once '../controllers/overviewControllers.php';
 ?>
 <table class="widthTable">
     <tr>
-        <td class="c text-center" colspan="4"><?= $arrayInfosPlanet['name'] ?> / <?= $_SESSION['User']['name'] ?></td>
+        <td class="c text-center" colspan="4"><a href="options.php"><?= $arrayInfosPlanet['name'] ?> / <?= $_SESSION['User']['name'] ?></a></td>
     </tr>
     <tr>
         <th>Heure</th>

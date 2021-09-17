@@ -47,6 +47,30 @@ session_start();
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if (<?= $validOption ?>) {
+            document.location.replace('options.php?validModify=no');
+        }
+
+        if (<?= $validModif ?>) {
+            document.location.replace('options.php?validModify=yes');
+        }
+
+        if (<?= $validDelete ?>) {
+            document.location.replace('options.php?validDelete=yes');
+        }
+
+        if (<?= $deleteAccount ?>) {
+            Swal.fire({
+                title: '<b>Compte Supprimer</b>',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(function() {
+                window.location = '../index.php';
+            })
+        }
+    </script>
 </body>
 
 </html>

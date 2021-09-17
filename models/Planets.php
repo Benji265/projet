@@ -25,9 +25,10 @@ class Planets extends Database
                                        `cristal_max`, 
                                        `deuterium`, 
                                        `deuterium_per_hour`, 
-                                       `deuterium_max`, 
+                                       `deuterium_max`,
+                                       `energy`, 
                                        `Users_id`) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
         $exec = $bdd->prepare($req);
         $exec->execute($arr);

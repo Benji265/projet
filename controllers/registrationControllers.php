@@ -100,9 +100,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     5000,
                     0,
                     500000,
+                    0,
                     $newUser
                 ];
-                $planetsObj->createPlanetForOneUser($arrayCreatePlanets);
+                 $planetsObj->createPlanetForOneUser($arrayCreatePlanets);
                 //Notre user est créer on affiche une modal
                 $createUser = true;
             }
