@@ -7,6 +7,10 @@ function compte_a_rebours() {
         var event = element.dataset.timebuilt * 1000
         var total_secondes = (event - actualDate) / 1000;
 
+        if (total_secondes <= 0) {
+            console.log('ok');
+        }
+
         if (total_secondes > 0) {
             var jours = Math.floor(total_secondes / (60 * 60 * 24));
             var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));

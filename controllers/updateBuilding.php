@@ -3,9 +3,6 @@
 switch ($_POST['buildingName']) {
     case 'Mine de métal':
 
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
-
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
 
@@ -17,12 +14,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForMineDeMetalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  costCristalForMineDeMetalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForMineDeMetalPerLevel($_POST['buildingLevel']), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Mine de cristal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -35,12 +30,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForMineDeCristalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  costCristalForMineDeCristalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForMineDeCristalPerLevel($_POST['buildingLevel']), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Synthétiseur de deutérium':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -53,12 +46,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForDeuteriumPerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  costCristalForDeuteriumPerLevel($_POST['buildingLevel']), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForDeuteriumPerLevel($_POST['buildingLevel']), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Centrale électrique solaire':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -71,12 +62,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreateCentrale($arrayRessourceUser['metal'], costMetalForCentralSolairePerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  costCristalForCentralSolairePerLevel($_POST['buildingLevel']), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForCentralSolairePerLevel($_POST['buildingLevel']), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Usine de robots':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -91,12 +80,10 @@ switch ($_POST['buildingName']) {
                 }
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Usine de nanites':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -111,12 +98,10 @@ switch ($_POST['buildingName']) {
                 }
             } 
         } 
+        $createBuilding = true;
         break;
 
     case 'Chantier spatial':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -131,12 +116,10 @@ switch ($_POST['buildingName']) {
                 } 
             } 
         } 
+        $createBuilding = true;
         break;
 
     case 'Hangar de métal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -147,12 +130,10 @@ switch ($_POST['buildingName']) {
             //On update les ressource qu'on vien de dépenser
             $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForHangarDeMetalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  0, $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
         } 
+        $createBuilding = true;
         break;
 
     case 'Hangar de cristal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -165,12 +146,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForHangarDeCristalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  costCristalForHangarDeCristalPerLevel($_POST['buildingLevel']), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
             } 
         } 
+        $createBuilding = true;
         break;
 
     case 'Réservoir de deutérium':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -183,12 +162,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForHangarDeDeutPerLevel($_POST['buildingLevel']), $arrayRessourceUser['cristal'],  costCristalForHangarDeDeutPerLevel($_POST['buildingLevel']), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
             } 
         } 
+        $createBuilding = true;
         break;
 
     case 'Laboratoire de recherche':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -203,6 +180,7 @@ switch ($_POST['buildingName']) {
                 }
             }
         }
+        $createBuilding = true;
         break;
 
 

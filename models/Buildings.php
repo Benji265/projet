@@ -182,4 +182,23 @@ class Buildings extends Database
 
         $req->execute();
     }
+
+    /**
+     * Methode qui permet de supprimer un batiments avec le nom et l'id de se batiment
+     *
+     * @param string $name
+     * @param integer $id
+     * @return void
+     */
+    public function deleteBuilding(string $name, int $id): void
+    {
+        $bdd = $this->connectDatabase();
+
+        $req = $bdd->prepare('DELETE FROM `Building` WHERE `name` = :name AND `Users_id` = :id');
+
+        $req->bindValue(':name', $name, PDO::PARAM_STR);
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $req->execute();
+    }
 }

@@ -18,6 +18,11 @@ $arrayResearch = $researchObj->getInfosResearchForOneUser($_SESSION['User']['id'
 
 $planetObj = new Planets();
 
+$createBuilding = 0;
+
+//On recupere l'heure a laquelle on a cliquer pour le créer
+$timestamp =  time();
+
 //On recupere les infos necessaire pour calculer le temps de contruction
 $infosUsineRobots = $buildingsObj->getInfosOnOneBuilding('Usine de robots', $_SESSION['User']['id']);
 $infosUsineNanites = $buildingsObj->getInfosOnOneBuilding('Usine de nanites', $_SESSION['User']['id']);

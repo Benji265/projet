@@ -1,10 +1,8 @@
 <?php
 
 switch ($_POST['buildingName']) {
+    
     case 'Mine de métal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -17,12 +15,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForMineDeMetalPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForMineDeMetalPerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForMineDeMetalPerLevel(1), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Mine de cristal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -35,12 +31,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForMineDeCristalPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForMineDeCristalPerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForMineDeCristalPerLevel(1), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Synthétiseur de deutérium':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -53,12 +47,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForDeuteriumPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForDeuteriumPerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForDeuteriumPerLevel(1), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Centrale électrique solaire':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -71,12 +63,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreateCentrale($arrayRessourceUser['metal'], costMetalForCentralSolairePerLevel(1), $arrayRessourceUser['cristal'],  costCristalForCentralSolairePerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], costEnergyForCentralSolairePerLevel(1), $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Usine de robots':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -91,12 +81,10 @@ switch ($_POST['buildingName']) {
                 }
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Usine de nanites':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -111,12 +99,10 @@ switch ($_POST['buildingName']) {
                 }
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Chantier spatial':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -131,12 +117,10 @@ switch ($_POST['buildingName']) {
                 }
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Hangar de métal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -147,12 +131,10 @@ switch ($_POST['buildingName']) {
             //On update les ressource qu'on vien de dépenser
             $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForHangarDeMetalPerLevel(1), $arrayRessourceUser['cristal'],  0, $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
         }
+        $createBuilding = true;
         break;
 
     case 'Hangar de cristal':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -165,12 +147,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForHangarDeCristalPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForHangarDeCristalPerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Réservoir de deutérium':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -183,12 +163,10 @@ switch ($_POST['buildingName']) {
                 $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForHangarDeDeutPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForHangarDeDeutPerLevel(1), $arrayRessourceUser['deuterium'], 0, $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
             }
         }
+        $createBuilding = true;
         break;
 
     case 'Laboratoire de recherche':
-
-        //On recupere l'heure a laquelle on a cliquer pour le créer
-        $timestamp =  mktime(date("G"), intval(date("i")), intval(date("s"), date("n"), date("j"), date("Y")));
 
         //On determine si on assez de ressource pour pouvoir construire le batiment
         $arrayRessourceUser = $planetObj->getInfosRessourceForOneUser($_SESSION['User']['id']);
@@ -203,6 +181,7 @@ switch ($_POST['buildingName']) {
                 }
             }
         }
+        $createBuilding = true;
         break;
 
     default:
