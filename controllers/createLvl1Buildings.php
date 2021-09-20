@@ -75,7 +75,7 @@ switch ($_POST['buildingName']) {
             if ($arrayRessourceUser['cristal'] >= costCristalForUsineDeRobotsPerLevel(1)) {
                 if ($arrayRessourceUser['deuterium'] >= costDeuteriumForUsineDeRobotsPerLevel(1)) {
                     //On créer le batiment
-                    $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, costMetalForUsineDeRobotsPerLevel(2), costCristalForUsineDeRobotsPerLevel(2), costDeuteriumForUsineDeRobotsPerLevel(2), 0, timeBuiltForBuilding(costMetalForUsineDeRobotsPerLevel(2), costCristalForUsineDeRobotsPerLevel(2), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']), false, $timestamp, $_SESSION['User']['id']);
+                    $buildingsObj->createBuildingLevel1($_POST['buildingName'], 1, costMetalForUsineDeRobotsPerLevel(2), costCristalForUsineDeRobotsPerLevel(2), costDeuteriumForUsineDeRobotsPerLevel(2), 0, timeBuiltForBuilding(costMetalForUsineDeRobotsPerLevel(2), costCristalForUsineDeRobotsPerLevel(2), $infosUsineRobots[0]['level'] == 1 && $infosUsineRobots[0]['built'] == 0 ? 0 : ($infosUsineRobots[0]['level'] > 1 && $infosUsineRobots[0]['built'] == 0 ? $infosUsineRobots[0]['level'] - 1 : $infosUsineRobots[0]['level']), $infosUsineNanites[0]['level']), false, $timestamp, $_SESSION['User']['id']);
                     //On update les ressource qu'on vien de dépenser
                     $planetObj->updateRessourceAfterCreate($arrayRessourceUser['metal'], costMetalForUsineDeRobotsPerLevel(1), $arrayRessourceUser['cristal'],  costCristalForUsineDeRobotsPerLevel(1), $arrayRessourceUser['deuterium'], costDeuteriumForUsineDeRobotsPerLevel(1), $arrayRessourceUser['energy'], 0, $_SESSION['User']['id']);
                 }

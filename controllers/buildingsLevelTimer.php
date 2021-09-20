@@ -17,7 +17,7 @@ if ($buildings['name'] == 'Centrale électrique solaire') {
 }
 
 if ($buildings['name'] == 'Usine de robots') {
-    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForUsineDeRobotsPerLevel($buildings['level']), costCristalForUsineDeRobotsPerLevel($buildings['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']);
+    $temp = $buildings['timestamp'] + timeBuiltForBuilding(costMetalForUsineDeRobotsPerLevel($buildings['level']), costCristalForUsineDeRobotsPerLevel($buildings['level']), $infosUsineRobots[0]['level'] == 1 && $infosUsineRobots[0]['built'] == 0 ? 0 : ($infosUsineRobots[0]['level'] > 1 && $infosUsineRobots[0]['built'] == 0 ? $infosUsineRobots[0]['level'] - 1 : $infosUsineRobots[0]['level']), $infosUsineNanites[0]['level']);
 }
 
 if ($buildings['name'] == 'Usine de nanites') {

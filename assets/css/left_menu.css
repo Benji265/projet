@@ -8,10 +8,20 @@ body {
 }
 
 body.style table {
-    margin-top: 30px;
-    margin-left: 20px;
+    margin: 30px 0px 0px 0px;
     width: 150px;
     border-spacing: 0px;
+}
+
+.marginLeftMenu{
+    margin: 30px 20px 0px 0px !important;
+    position: sticky;
+    top: 25%;
+}
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
 }
 
 table tr td {
@@ -91,8 +101,7 @@ a:hover {
 }
 
 .style {
-    margin-top: 10px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
@@ -108,7 +117,7 @@ h2 {
     text-align: center;
 }
 
-body > div > table > tbody > tr > td {
+body>div>table>tbody>tr>td {
     color: red;
 }
 
@@ -125,9 +134,9 @@ body > div > table > tbody > tr > td {
 }
 
 .widthTable {
-    width: 519px !important;
+    width: 600px !important;
 }
 
-.widthTableError{
+.widthTableError {
     width: 300px !important;
 }

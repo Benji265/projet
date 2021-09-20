@@ -2,6 +2,10 @@
 
 @media screen and (max-width: 768px) {
     .widthTable {
-        width: 345px !important;
+        width: 100% !important;
+    }
+
+    .style {
+        margin-bottom: 7rem;
     }
 }

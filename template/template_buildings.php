@@ -9,7 +9,7 @@ require_once '../controllers/buildingsControllers.php';
         <?php foreach ($arrayBuilding as $buildings) {
             if ($buildings['built'] == 0) {
 
-                require('../controllers/arrayBuildingsLevel.php');
+                require('../controllers/buildingsLevelTimer.php');
 
                 $temp_remaining = $temp - time();
 
@@ -66,10 +66,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -94,10 +94,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -125,10 +125,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -153,10 +153,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -184,10 +184,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -212,10 +212,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -243,10 +243,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -271,10 +271,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -303,14 +303,14 @@ require_once '../controllers/buildingsControllers.php';
                                 <?= 'Deuterium : ' . '<span class="red">' . costDeuteriumForUsineDeRobotsPerLevel(1) . '</span>' ?> <br><br>
                                 <?php $errorMsg['Ressource'] = 'Insuffisant'; ?>
                             <?php } ?>
-                            Temps de construction : <?= displayTimeBuilt(costMetalForUsineDeRobotsPerLevel(1), costCristalForUsineDeRobotsPerLevel(1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
+                            Temps de construction : <?= displayTimeBuilt(costMetalForUsineDeRobotsPerLevel(1), costCristalForUsineDeRobotsPerLevel(1), $infosUsineRobots[0]['level'] == 1 && $infosUsineRobots[0]['built'] == 0 ? 0 : ($infosUsineRobots[0]['level'] > 1 && $infosUsineRobots[0]['built'] == 0 ? $infosUsineRobots[0]['level'] - 1 : $infosUsineRobots[0]['level']), $infosUsineNanites[0]['level']) ?></th>
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -335,15 +335,15 @@ require_once '../controllers/buildingsControllers.php';
                                 <?= $building[0]['deuterium_price'] == 0 ? '' : ($building[0]['built'] == 0 ? 'Deuterium : ' . costDeuteriumForUsineDeRobotsPerLevel($building[0]['level']) : 'Deuterium : ' . '<span class="red">' . $building[0]['deuterium_price'] . '</span>') ?> <br><br>
                                 <?php $errorMsg['Ressource'] = 'Insuffisant'; ?>
                             <?php } ?>
-                            Temps de construction : <?= $building[0]['built'] == 1 ? displayTimeBuilt(costMetalForUsineDeRobotsPerLevel($building[0]['level'] + 1), costCristalForUsineDeRobotsPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) : displayTimeBuilt(costMetalForUsineDeRobotsPerLevel($building[0]['level']), costCristalForUsineDeRobotsPerLevel($building[0]['level']), $infosUsineRobots[0]['level'], $infosUsineNanites[0]['level']) ?></th>
+                            Temps de construction : <?= $building[0]['built'] == 1 ? displayTimeBuilt(costMetalForUsineDeRobotsPerLevel($building[0]['level'] + 1), costCristalForUsineDeRobotsPerLevel($building[0]['level'] + 1), $infosUsineRobots[0]['level'] == 1 && $infosUsineRobots[0]['built'] == 0 ? 0 : ($infosUsineRobots[0]['level'] > 1 && $infosUsineRobots[0]['built'] == 0 ? $infosUsineRobots[0]['level'] - 1 : $infosUsineRobots[0]['level']), $infosUsineNanites[0]['level']) : displayTimeBuilt(costMetalForUsineDeRobotsPerLevel($building[0]['level']), costCristalForUsineDeRobotsPerLevel($building[0]['level']), $infosUsineRobots[0]['level'] == 1 && $infosUsineRobots[0]['built'] == 0 ? 0 : ($infosUsineRobots[0]['level'] > 1 && $infosUsineRobots[0]['built'] == 0 ? $infosUsineRobots[0]['level'] - 1 : $infosUsineRobots[0]['level']), $infosUsineNanites[0]['level']) ?></th>
                         <?php if ($building[0]['built'] == 1 && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -380,10 +380,10 @@ require_once '../controllers/buildingsControllers.php';
                                 <?php if (empty($building) && $errorMsg['Ressource']) { ?>
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                        <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                        <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                                     </form>
                                 <?php } else { ?>
-                                    <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                                    <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                                 <?php } ?>
                             </tr>
                         <?php } else { ?>
@@ -413,10 +413,10 @@ require_once '../controllers/buildingsControllers.php';
                                     <form action="buildings.php" method="POST">
                                         <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                         <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                        <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                        <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                                     </form>
                                 <?php } else { ?>
-                                    <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                                    <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                                 <?php } ?>
                             </tr>
                         <?php } ?>
@@ -453,10 +453,10 @@ require_once '../controllers/buildingsControllers.php';
                             <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                                 <form action="buildings.php" method="POST">
                                     <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                    <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                    <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                                 </form>
                             <?php } else { ?>
-                                <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                             <?php } ?>
                         </tr>
                     <?php } else { ?>
@@ -486,10 +486,10 @@ require_once '../controllers/buildingsControllers.php';
                                 <form action="buildings.php" method="POST">
                                     <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                     <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                    <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                    <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                                 </form>
                             <?php } else { ?>
-                                <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire impossible</b></button></th>
                             <?php } ?>
                         </tr>
                     <?php } ?>
@@ -511,10 +511,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -532,10 +532,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossbile</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -562,10 +562,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -589,10 +589,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -619,10 +619,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -646,10 +646,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossbile</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>
@@ -682,10 +682,10 @@ require_once '../controllers/buildingsControllers.php';
                         <?php if (empty($building) && empty($errorMsg['Ressource'])) { ?>
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
-                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit name="newBuilding" class="noStyleButton text-white" size=5 maxlength=5 value="construire"><b>Construire <br> Niveau 1</b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } else { ?>
@@ -715,10 +715,10 @@ require_once '../controllers/buildingsControllers.php';
                             <form action="buildings.php" method="POST">
                                 <input type="hidden" name="buildingName" value="<?= $value['name'] ?>">
                                 <input type="hidden" name="buildingLevel" value="<?= $building[0]['level'] ?>">
-                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire</b></button></th>
+                                <th><button type=submit class="noStyleButton text-white" name="updateBuilding" size=5 maxlength=5 value="construire"><b>Construire <br> Niveaux <?= $building[0]['level'] + 1 ?></b></button></th>
                             </form>
                         <?php } else { ?>
-                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construire</b></button></th>
+                            <th><button type=submit class="noStyleButton text-white" size=5 maxlength=5 value="construire" disabled><b>Construction impossible</b></button></th>
                         <?php } ?>
                     </tr>
                 <?php } ?>

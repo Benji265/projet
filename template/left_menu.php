@@ -1,4 +1,4 @@
-<table>
+<table class="marginLeftMenu">
     <tr>
         <td colspan="2">
             <div class="red">XNova</div>
