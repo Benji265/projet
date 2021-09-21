@@ -5,7 +5,11 @@
         width: 100% !important;
     }
 
+    .w100{
+        width: 100% !important;
+    }
+
     .style {
-        margin-bottom: 7rem;
+        margin-bottom: 5rem;
     }
 }

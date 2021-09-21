@@ -58,7 +58,7 @@ require_once '../controllers/optionsControllers.php';
                 <th colspan="4" class="titleMenu">Confirmation</th>
             </tr>
             <tr>
-                <th colspan="4" class="red">Vos information ont bien été changer</th>
+                <th colspan="4" class="red">Vos information ont bien été changer <br> <a href="overview.php">Vue Générale</a></th>
             </tr>
         </tbody>
     </table>

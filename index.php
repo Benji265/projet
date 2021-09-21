@@ -20,7 +20,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav navLink">
-                    <li class="nav-item d-none d-lg-block d-xxl-none">
+                    <li class="nav-item d-none d-xl-block">
                         <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">

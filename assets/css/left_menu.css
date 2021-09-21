@@ -3,7 +3,7 @@ body {
     background-color: #040e1e;
     background: url(../img/background2.jpg) no-repeat center center fixed;
     background-size: cover;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
@@ -13,10 +13,10 @@ body.style table {
     border-spacing: 0px;
 }
 
-.marginLeftMenu{
-    margin: 30px 20px 0px 0px !important;
+.marginLeftMenu {
+    margin: 50px 20px 0px 0px !important;
     position: sticky;
-    top: 25%;
+    top: 30%;
 }
 
 .row {
@@ -31,7 +31,7 @@ table tr td {
 th,
 .style td {
     border: 1px #545454 solid;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
@@ -63,7 +63,7 @@ a:hover {
 
 .style td {
     color: #FFFFFF;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
@@ -71,21 +71,21 @@ a:hover {
     padding-left: 7px;
     height: 100%;
     width: 100%;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
 .style div a:link {
     height: 100%;
     width: 100%;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
 .style div a:visited {
     height: 100%;
     width: 100%;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
@@ -96,12 +96,16 @@ a:hover {
     height: 100%;
     width: 108px;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, sans-serif;
 }
 
 .style {
     margin-bottom: 1rem;
+}
+
+.reset {
+    margin-bottom: 0rem !important;
 }
 
 h2 {
@@ -131,6 +135,7 @@ body>div>table>tbody>tr>td {
 .titleMenu {
     text-align: center;
     background: url(../img/bg1.gif);
+    font-weight: bold;
 }
 
 .widthTable {

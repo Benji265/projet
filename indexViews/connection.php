@@ -23,7 +23,7 @@ require_once '../controllers/connectionControllers.php';
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav navLink">
-                    <li class="nav-item d-none d-lg-block d-xxl-none">
+                    <li class="nav-item d-none d-xl-block">
                         <a class="nav-link active" aria-current="page" href="../index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
@@ -58,7 +58,7 @@ require_once '../controllers/connectionControllers.php';
                 </div>
                 <div class="row justify-content-center text-center">
                     <div class="col-auto">
-                        <p class="text1"><a href="recoveryPassword.php">Mot de passe oublié ?</a></p>
+                        <!-- <p class="text1"><a href="recoveryPassword.php">Mot de passe oublié ?</a></p> -->
                         <p class="text1"><a href="registration.php">Créer un nouveaux compte</a></p>
                     </div>
                 </div>
